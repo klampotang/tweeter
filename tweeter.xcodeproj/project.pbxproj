@@ -13,6 +13,8 @@
 		88EE55EB1D21C97C00E1BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88EE55EA1D21C97C00E1BC51 /* Assets.xcassets */; };
 		88EE55EE1D21C97C00E1BC51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EE55EC1D21C97C00E1BC51 /* LaunchScreen.storyboard */; };
 		88EE55F61D21CD5A00E1BC51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE55F51D21CD5A00E1BC51 /* LoginViewController.swift */; };
+		88EE55FB1D21E2B000E1BC51 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE55FA1D21E2B000E1BC51 /* User.swift */; };
+		88EE55FD1D21E2C300E1BC51 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE55FC1D21E2C300E1BC51 /* Tweet.swift */; };
 		F07BADD86A41B1C6B003A246 /* Pods_tweeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6659FD2275C155993456C691 /* Pods_tweeter.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		88EE55ED1D21C97C00E1BC51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88EE55EF1D21C97C00E1BC51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88EE55F51D21CD5A00E1BC51 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		88EE55FA1D21E2B000E1BC51 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		88EE55FC1D21E2C300E1BC51 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		C107E0CA3EDA6F76C575D09F /* Pods-tweeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweeter/Pods-tweeter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,15 +76,41 @@
 		88EE55E21D21C97C00E1BC51 /* tweeter */ = {
 			isa = PBXGroup;
 			children = (
+				88EE55F91D21DEDC00E1BC51 /* API */,
+				88EE55F81D21DEC600E1BC51 /* ViewControllers */,
+				88EE55F71D21DEC200E1BC51 /* Models */,
 				88EE55E31D21C97C00E1BC51 /* AppDelegate.swift */,
-				88EE55E51D21C97C00E1BC51 /* ViewController.swift */,
 				88EE55E71D21C97C00E1BC51 /* Main.storyboard */,
-				88EE55F51D21CD5A00E1BC51 /* LoginViewController.swift */,
 				88EE55EA1D21C97C00E1BC51 /* Assets.xcassets */,
 				88EE55EC1D21C97C00E1BC51 /* LaunchScreen.storyboard */,
 				88EE55EF1D21C97C00E1BC51 /* Info.plist */,
 			);
 			path = tweeter;
+			sourceTree = "<group>";
+		};
+		88EE55F71D21DEC200E1BC51 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88EE55FA1D21E2B000E1BC51 /* User.swift */,
+				88EE55FC1D21E2C300E1BC51 /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		88EE55F81D21DEC600E1BC51 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88EE55E51D21C97C00E1BC51 /* ViewController.swift */,
+				88EE55F51D21CD5A00E1BC51 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88EE55F91D21DEDC00E1BC51 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		939EFDF94B5E7B4E1C18E1D2 /* Frameworks */ = {
@@ -214,6 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88EE55FB1D21E2B000E1BC51 /* User.swift in Sources */,
+				88EE55FD1D21E2C300E1BC51 /* Tweet.swift in Sources */,
 				88EE55F61D21CD5A00E1BC51 /* LoginViewController.swift in Sources */,
 				88EE55E61D21C97C00E1BC51 /* ViewController.swift in Sources */,
 				88EE55E41D21C97C00E1BC51 /* AppDelegate.swift in Sources */,
