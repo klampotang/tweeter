@@ -28,5 +28,8 @@ class TweetsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func logoutClicked(sender: AnyObject) {
+        APIClient.sharedInstance.logOut()
+    }
 
 }

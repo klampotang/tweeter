@@ -61,6 +61,11 @@ class APIClient: BDBOAuth1SessionManager {
         }
 
     }
+    func logOut()
+    {
+        deauthorize()
+        User.currentUser = nil
+    }
     func handleOpenUrl(url: NSURL)
     {
         let requestToken = BDBOAuth1Credential(queryString: url.query)
