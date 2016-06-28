@@ -21,6 +21,12 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         
         getTimeline()
+        
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count ?? 0;
@@ -37,11 +43,17 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func logoutClicked(sender: AnyObject) {
         APIClient.sharedInstance.logOut()
     }
+    func refreshControlAction(refreshControl: UIRefreshControl)
+    {
+        getTimeline()
+        refreshControl.endRefreshing()
+    }
     func getTimeline()
     {
         APIClient.sharedInstance.homeTimeline({ (tweets: [Tweet]) -> Void in
             self.tweets = tweets
             self.tableView.reloadData()
+            // Tell the refreshControl to stop spinning
             for tweet in tweets
             {
                 print(tweet.text)
@@ -49,7 +61,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }, failure: { (error: NSError) -> () in
                 //print("error: \(error.localizedDesciption)")
         })
-        //self.tableView.reloadData()
     }
 
 }
