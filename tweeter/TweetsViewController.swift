@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NSDate_TimeAgo
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -43,9 +44,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let datey = tweety.createdAt! as NSDate
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        let dateyString = dateFormatter.stringFromDate(datey)
-        
-        cell.timeLabel.text = dateyString
+        //let dateyString = dateFormatter.stringFromDate(datey)
+        let dateyRelative = datey.dateTimeAgo()
+        cell.timeLabel.text = dateyRelative
         
         //User
         let userParticular = tweety.author
@@ -59,7 +60,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         else
         {
-            
+            //Do nothing
         }
         
         //Username
@@ -85,10 +86,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tweets = tweets
             self.tableView.reloadData()
             // Tell the refreshControl to stop spinning
-            for tweet in tweets
-            {
-                print(tweet.text)
-            }
             }, failure: { (error: NSError) -> () in
                 //print("error: \(error.localizedDesciption)")
         })
