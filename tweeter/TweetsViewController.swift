@@ -13,6 +13,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
 
     var tweets : [Tweet] = []
+    var isMoreDataLoading = false
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -61,6 +62,21 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }, failure: { (error: NSError) -> () in
                 //print("error: \(error.localizedDesciption)")
         })
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // Handle scroll behavior here
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                isMoreDataLoading = true
+                
+                getTimeline()
+            }
+        }
     }
 
 }
