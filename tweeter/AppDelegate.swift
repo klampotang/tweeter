@@ -23,7 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsNavigationController")
             window?.rootViewController = vc
             //makes this the initial view controller ^
-            
+        }
+        NSNotificationCenter.defaultCenter().addObserverForName(User.userDidLogoutNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController()
+            self.window?.rootViewController = vc
             
         }
         
@@ -56,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         APIClient.sharedInstance.handleOpenUrl(url)
         return true
     }
-
 
 }
 

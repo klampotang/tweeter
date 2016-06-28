@@ -10,7 +10,7 @@ import UIKit
 import BDBOAuth1Manager
 
 class APIClient: BDBOAuth1SessionManager {
-    
+        
     static let sharedInstance = APIClient(baseURL: NSURL(string: "https://api.twitter.com"), consumerKey: "k6S9N2BDBSqUkDMXUqs6XI1LZ", consumerSecret: "ghsFwdk1cbWyNGYZINJ5HUV9ZIRPWXqMOWIyIgRyCFo5WH2q2Q")
     
     var loginSuccess : (() -> ())?
@@ -65,6 +65,7 @@ class APIClient: BDBOAuth1SessionManager {
     {
         deauthorize()
         User.currentUser = nil
+        NSNotificationCenter.defaultCenter().postNotificationName(User.userDidLogoutNotification, object: nil)
     }
     func handleOpenUrl(url: NSURL)
     {
