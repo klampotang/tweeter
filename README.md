@@ -1,15 +1,15 @@
-# Project 4 - *Name of App Here*
+# Project 4 - tweeter
 
-**Name of your app** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+tweeter is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent: 3 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can sign in using OAuth login flow
-- [ ] The current signed in user will be persisted across restarts
+- [x] User can sign in using OAuth login flow
+- [x] The current signed in user will be persisted across restarts
 - [ ] User can view last 20 tweets from their home timeline
 - [ ] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
 - [ ] User can pull to refresh.
@@ -65,7 +65,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Kelly Lampotang]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
