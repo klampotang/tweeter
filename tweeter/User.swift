@@ -12,10 +12,10 @@ class User: NSObject {
     
     static let userDidLogoutNotification = "UserDidLogout"
     
-    var name: NSString?
-    var screenname: NSString?
+    var name: String?
+    var screenname: String?
     var profileImage: NSURL?
-    var tagline: NSString?
+    var tagline: String?
     var dictionary : NSDictionary?
     
     init(dictionary: NSDictionary)
@@ -24,13 +24,13 @@ class User: NSObject {
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         
-        let profilePicURL = dictionary["profileImage"] as? String
+        let profilePicURL = dictionary["profile_image_url_https"] as? String
         if let profilePicURL = profilePicURL
         {
             profileImage = NSURL(string: profilePicURL)
         }
         
-        tagline = dictionary["profile_image_url_https"] as? String
+        tagline = dictionary["description"] as? String
     }
     static var _currentUser: User?
     

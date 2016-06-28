@@ -34,7 +34,37 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
-        cell.tweetTextLabel.text = (tweets[indexPath.row]).text
+        let tweety = tweets[indexPath.row]
+        
+        //Tweet text
+        cell.tweetTextLabel.text = tweety.text
+        
+        //Date
+        let datey = tweety.createdAt! as NSDate
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        let dateyString = dateFormatter.stringFromDate(datey)
+        
+        cell.timeLabel.text = dateyString
+        
+        //User
+        let userParticular = tweety.author
+        //Profile picture
+        if let profilePicURL = userParticular!.profileImage
+        {
+            let data = NSData(contentsOfURL:profilePicURL)
+            if data != nil {
+                cell.profilePicImage.image = UIImage(data:data!)
+            }
+        }
+        else
+        {
+            
+        }
+        
+        //Username
+        cell.usernameLabel.text = userParticular?.screenname
+        
         return cell
     }
     override func didReceiveMemoryWarning() {

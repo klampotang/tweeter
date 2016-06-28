@@ -72,22 +72,50 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUD-MM-vqK">
-                                                    <rect key="frame" x="13" y="13" width="349" height="100"/>
+                                                    <rect key="frame" x="8" y="86.5" width="359" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="HaQ-OL-2FL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Lb-i7-yO0">
+                                                    <rect key="frame" x="8" y="8" width="65" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="ARH-ZZ-JLM"/>
+                                                        <constraint firstAttribute="width" constant="65" id="wtC-W9-gwg"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QES-ww-Oec">
+                                                    <rect key="frame" x="81" y="8" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZr-sS-8Fq">
+                                                    <rect key="frame" x="328" y="24" width="34" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zUD-MM-vqK" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="topMargin" constant="5" id="8hY-Hw-hVd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zUD-MM-vqK" secondAttribute="trailing" constant="5" id="crw-RM-mZh"/>
-                                                <constraint firstItem="zUD-MM-vqK" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leadingMargin" constant="5" id="k1j-uR-g7U"/>
+                                                <constraint firstItem="QES-ww-Oec" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="top" constant="8" id="1Hg-Ki-GXE"/>
+                                                <constraint firstItem="1Lb-i7-yO0" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="top" constant="8" id="EL3-4U-b3I"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MZr-sS-8Fq" secondAttribute="trailing" constant="5" id="NYG-C0-JWp"/>
+                                                <constraint firstItem="QES-ww-Oec" firstAttribute="leading" secondItem="1Lb-i7-yO0" secondAttribute="trailing" constant="8" id="Qct-AW-jQS"/>
+                                                <constraint firstAttribute="trailing" secondItem="zUD-MM-vqK" secondAttribute="trailing" constant="8" id="W1Y-YR-5Pi"/>
+                                                <constraint firstItem="MZr-sS-8Fq" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="topMargin" constant="16" id="bft-hW-afo"/>
+                                                <constraint firstItem="1Lb-i7-yO0" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="8" id="cMv-Fs-PPa"/>
+                                                <constraint firstItem="zUD-MM-vqK" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="8" id="gi9-K3-JeR"/>
+                                                <constraint firstAttribute="bottom" secondItem="zUD-MM-vqK" secondAttribute="bottom" constant="8" id="xdZ-JL-i44"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="profilePicImage" destination="1Lb-i7-yO0" id="hbt-ao-c9M"/>
+                                            <outlet property="timeLabel" destination="MZr-sS-8Fq" id="aHi-do-vss"/>
                                             <outlet property="tweetTextLabel" destination="zUD-MM-vqK" id="MFj-LN-Z2P"/>
+                                            <outlet property="usernameLabel" destination="QES-ww-Oec" id="arg-UT-mkb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
