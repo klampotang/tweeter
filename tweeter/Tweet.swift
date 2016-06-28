@@ -9,7 +9,7 @@
 import UIKit
 
 class Tweet: NSObject {
-    var text: NSString?
+    var text: String?
     var createdAt: NSDate?
     var retweetCount: Int = 0
     var likeCount: Int = 0
