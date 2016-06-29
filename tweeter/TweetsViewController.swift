@@ -31,7 +31,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tweets.count ?? 0;
+        return tweets.count ?? 0
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
@@ -66,6 +66,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //Username
         cell.usernameLabel.text = userParticular?.screenname
         
+        //Retweet Count
+        cell.retweetCountLabel.text = "\(tweety.retweetCount)"
+        
+        //Likes
+        cell.likeCountLabel.text = "\(tweety.likeCount)"
         return cell
     }
     override func didReceiveMemoryWarning() {
@@ -105,5 +110,47 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
+    
+    @IBAction func likeTouched(sender: AnyObject) {
+        
+       var indexPath: NSIndexPath!
+        if let button = sender as? UIButton {
+            if let superview = button.superview {
+                if let cell = superview.superview as? TweetCell {
+                    indexPath = (tableView.indexPathForCell(cell))
+                }
+            }
+        }
+        
+        let tweety = tweets[indexPath.row]
+        let idInt = tweety.id
+        APIClient.sharedInstance.likeStatus(idInt!)
+        let cell1 = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        let likesCountNum = tweety.likeCount
+        cell1.likeCountLabel.text = "Liked"
+        tableView.reloadData()
+        
+    }
+    
+    @IBAction func retweetTouched(sender: AnyObject) {
+        var indexPath: NSIndexPath!
+        
+        if let button = sender as? UIButton {
+            if let superview = button.superview {
+                if let cell = superview.superview as? TweetCell {
+                    indexPath = (tableView.indexPathForCell(cell))
+                }
+            }
+        }
+        let tweety = tweets[indexPath.row]
+        let idInt = tweety.id
+        APIClient.sharedInstance.retweet(idInt!)
+        let cell1 = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        cell1.retweetCountLabel.text = "Retweeted"
+        tableView.reloadData()
+        
+    }
+    
+    
 
 }

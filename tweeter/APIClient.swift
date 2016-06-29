@@ -29,6 +29,23 @@ class APIClient: BDBOAuth1SessionManager {
         })
     }
     
+    func retweet(id: String)
+    {
+        POST("1.1/statuses/retweet/\(id).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("Success")
+        }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+            print("Failure: \(error)")
+        }
+        
+    }
+    func likeStatus(id: String)
+    {
+        POST("1.1/favorites/create.json?id=\(id)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("YAY")
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            print("failure: \(error)")
+        }
+    }
     func currUser(success: (User) -> (), failure: (NSError)-> ())
     {
         GET("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
