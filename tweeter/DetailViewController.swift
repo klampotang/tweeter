@@ -46,12 +46,19 @@ class DetailViewController: UIViewController {
     @IBAction func likeAction(sender: AnyObject) {
         like()
     }
+    func retweet()
+    {
+        let idInt = particularTweet!.id
+        APIClient.sharedInstance.retweet(idInt!)
+        //Update the retweet count
+        rtCountLabel.text = "Retweeted" //Fix this later
+    }
     func like()
     {
         let idInt = particularTweet!.id
         APIClient.sharedInstance.likeStatus(idInt!)
         //Update like thing
-        likeCountLabel.text = "hi"
+        likeCountLabel.text = "hi" //Fix this later
     }
     override func previewActionItems() -> [UIPreviewActionItem] {
         
@@ -60,11 +67,17 @@ class DetailViewController: UIViewController {
             print("You liked the photo")
         }
         
+        let retweetAction = UIPreviewAction(title: "Retweet", style: .Default) { (action, viewController) -> Void in
+            self.retweet()
+            print("You retweeted")
+            
+        }
+        
         let deleteAction = UIPreviewAction(title: "Cancel", style: .Destructive) { (action, viewController) -> Void in
             print("Cancelled")
         }
         
-        return [likeAction, deleteAction]
+        return [likeAction, retweetAction, deleteAction]
         
     }
 
