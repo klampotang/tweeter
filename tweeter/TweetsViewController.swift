@@ -169,9 +169,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //Send username
         vc.usernameFromSegue = user?.name
         
+        //Send tweet
+        vc.particularTweet = tweety
         
     }
-    
-    
-
 }

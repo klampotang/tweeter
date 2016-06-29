@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     var profilePicFromSegue:UIImage?
     var rtCountFromSegue:Int?
     var usernameFromSegue : String?
+    var particularTweet : Tweet?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,29 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func likeAction(sender: AnyObject) {
+        like()
+    }
+    func like()
+    {
+        let idInt = particularTweet!.id
+        APIClient.sharedInstance.likeStatus(idInt!)
+        //Update like thing
+        likeCountLabel.text = "hi"
+    }
+    override func previewActionItems() -> [UIPreviewActionItem] {
+        
+        let likeAction = UIPreviewAction(title: "Like", style: .Default) { (action, viewController) -> Void in
+            self.like()
+            print("You liked the photo")
+        }
+        
+        let deleteAction = UIPreviewAction(title: "Cancel", style: .Destructive) { (action, viewController) -> Void in
+            print("Cancelled")
+        }
+        
+        return [likeAction, deleteAction]
         
     }
+
 
 }
