@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -160,7 +161,10 @@
                                             <outlet property="timeLabel" destination="MZr-sS-8Fq" id="aHi-do-vss"/>
                                             <outlet property="tweetTextLabel" destination="zUD-MM-vqK" id="MFj-LN-Z2P"/>
                                             <outlet property="usernameLabel" destination="QES-ww-Oec" id="arg-UT-mkb"/>
-                                            <segue destination="dpr-34-8zY" kind="show" id="jlN-ta-2cC"/>
+                                            <segue destination="dpr-34-8zY" kind="show" id="jlN-ta-2cC">
+                                                <segue key="commit" inheritsFrom="parent" id="pc5-Zx-HYQ"/>
+                                                <segue key="preview" inheritsFrom="commit" id="9k9-KZ-ju7"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -297,4 +301,7 @@
             <point key="canvasLocation" x="657.5" y="110.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jlN-ta-2cC"/>
+    </inferredMetricsTieBreakers>
 </document>

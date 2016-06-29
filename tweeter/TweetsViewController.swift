@@ -150,7 +150,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let vc = segue.destinationViewController as! DetailViewController
         let indexPath1 = tableView.indexPathForCell(sender as! TweetCell)
-        let tweety = self.tweets[indexPath1!.section]
+        let tweety = self.tweets[indexPath1!.row]
         
         //Send tweet
         vc.textFromSegue = tweety.text

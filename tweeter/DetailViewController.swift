@@ -39,6 +39,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func rtAction(sender: AnyObject) {
         
+        
     }
     
     @IBAction func likeAction(sender: AnyObject) {
