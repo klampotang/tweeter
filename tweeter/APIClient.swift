@@ -29,7 +29,7 @@ class APIClient: BDBOAuth1SessionManager {
         })
     }
     
-    func retweet(id: String)
+    func retweet(id: String, success: (Tweet) -> (), failure: (NSError) -> ())
     {
         POST("1.1/statuses/retweet/\(id).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
             print("Success")

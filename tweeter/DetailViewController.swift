@@ -49,9 +49,16 @@ class DetailViewController: UIViewController {
     func retweet()
     {
         let idInt = particularTweet!.id
-        APIClient.sharedInstance.retweet(idInt!)
-        //Update the retweet count
-        rtCountLabel.text = "Retweeted" //Fix this later
+        APIClient.sharedInstance.retweet(idInt!, success: { (tweet: Tweet) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                //Update the retweet count
+                self.rtCountLabel.text = "Retweeted"
+            }
+            },
+        failure: { (error: NSError) -> () in
+        //print("error: \(error.localizedDesciption)")
+        })
     }
     
     func like()

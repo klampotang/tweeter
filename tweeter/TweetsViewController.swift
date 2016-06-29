@@ -140,37 +140,62 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         let tweety = tweets[indexPath.row]
         let idInt = tweety.id
-        APIClient.sharedInstance.retweet(idInt!)
-        let cell1 = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
-        cell1.retweetCountLabel.text = "Retweeted" // WHY NOT WORKING
-        self.tableView.reloadData()
+        APIClient.sharedInstance.retweet(idInt!, success: { (tweet: Tweet) -> Void in
+            let cell1 = self.tableView.cellForRowAtIndexPath(indexPath) as! TweetCell
+            cell1.retweetCountLabel.text = "Retweeted"
+            self.tableView.reloadData()},
+            failure: { (error: NSError) -> () in
+                //print("error: \(error.localizedDesciption)")
+        })
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc = segue.destinationViewController as! DetailViewController
-        let indexPath1 = tableView.indexPathForCell(sender as! TweetCell)
-        let tweety = self.tweets[indexPath1!.row]
-        
-        //Send tweet
-        vc.textFromSegue = tweety.text
-        //Send likes count
-        vc.likeCountFromSegue = tweety.likeCount
-        //Send rt count
-        vc.rtCountFromSegue = tweety.retweetCount
-        //Send pic
-        let user = tweety.author
-        let picURL = user?.profileImage
-        let data = NSData(contentsOfURL:picURL!)
-        if data != nil {
-            let picImage = UIImage(data:data!)
-            vc.profilePicFromSegue = picImage
+        if segue.destinationViewController.restorationIdentifier == "DetailViewController"
+        {
+            let vc = segue.destinationViewController as! DetailViewController
+            let indexPath1 = tableView.indexPathForCell(sender as! TweetCell)
+            let tweety = self.tweets[indexPath1!.row]
+            
+            //Send tweet
+            vc.textFromSegue = tweety.text
+            //Send likes count
+            vc.likeCountFromSegue = tweety.likeCount
+            //Send rt count
+            vc.rtCountFromSegue = tweety.retweetCount
+            //Send pic
+            let user = tweety.author
+            let picURL = user?.profileImage
+            let data = NSData(contentsOfURL:picURL!)
+            if data != nil {
+                let picImage = UIImage(data:data!)
+                vc.profilePicFromSegue = picImage
+            }
+            //Send username
+            vc.usernameFromSegue = user?.name
+            
+            //Send tweet
+            vc.particularTweet = tweety
         }
-        //Send username
-        vc.usernameFromSegue = user?.name
-        
-        //Send tweet
-        vc.particularTweet = tweety
+        else if segue.destinationViewController.restorationIdentifier == "GenProfileViewController"
+        {
+           /* let vc = segue.destinationViewController as! GenProfileViewController
+            let indexPath1 = tableView.indexPathForCell(sender as! TweetCell)
+            let tweety = self.tweets[indexPath1!.row]
+            
+            let author = tweety.author
+            let profileImageURL = author?.profileImage
+            
+            //Make a UIImage from this:
+            let data = NSData(contentsOfURL:profileImageURL!)
+            if data != nil {
+                let picImage = UIImage(data:data!)
+                vc.profileImagefromSegue = picImage
+            }*/
+
+            
+        }
+    
         
     }
 }
