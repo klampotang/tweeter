@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
     
@@ -21,6 +22,7 @@ class ProfileViewController: UIViewController {
             if data != nil {
                 let picImage = UIImage(data:data!)
                 self.profileImageView.image = picImage
+                self.usernameLabel.text = user.screenname
             }
 
         }) { (error: NSError) in
