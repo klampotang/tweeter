@@ -13,11 +13,19 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
-    var profileImagefromSegue : UIImage?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImageView.image = profileImagefromSegue
+        let currUser = APIClient.sharedInstance.currUser({ (user: User) in
+            let userImageURL = user.profileImage
+            let data = NSData(contentsOfURL:userImageURL!)
+            if data != nil {
+                let picImage = UIImage(data:data!)
+                self.profileImageView.image = picImage
+            }
+
+        }) { (error: NSError) in
+                print("error in displaying ur pic")
+        }
         // Do any additional setup after loading the view.
     }
 
