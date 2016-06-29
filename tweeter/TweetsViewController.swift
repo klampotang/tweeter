@@ -110,7 +110,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    
     @IBAction func likeTouched(sender: AnyObject) {
         
        var indexPath: NSIndexPath!
@@ -121,17 +120,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-        
         let tweety = tweets[indexPath.row]
         let idInt = tweety.id
         APIClient.sharedInstance.likeStatus(idInt!)
         let cell1 = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
-        let likesCountNum = tweety.likeCount
-        cell1.likeCountLabel.text = "Liked"
-        tableView.reloadData()
-        
+        //let likesCountNum = tweety.likeCount
+        cell1.likeCountLabel.text = "Liked" // WHY NOT WORKING
+        self.tableView.reloadData()
     }
-    
     @IBAction func retweetTouched(sender: AnyObject) {
         var indexPath: NSIndexPath!
         
@@ -146,8 +142,33 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let idInt = tweety.id
         APIClient.sharedInstance.retweet(idInt!)
         let cell1 = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
-        cell1.retweetCountLabel.text = "Retweeted"
-        tableView.reloadData()
+        cell1.retweetCountLabel.text = "Retweeted" // WHY NOT WORKING
+        self.tableView.reloadData()
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! DetailViewController
+        let indexPath1 = tableView.indexPathForCell(sender as! TweetCell)
+        let tweety = self.tweets[indexPath1!.section]
+        
+        //Send tweet
+        vc.textFromSegue = tweety.text
+        //Send likes count
+        vc.likeCountFromSegue = tweety.likeCount
+        //Send rt count
+        vc.rtCountFromSegue = tweety.retweetCount
+        //Send pic
+        let user = tweety.author
+        let picURL = user?.profileImage
+        let data = NSData(contentsOfURL:picURL!)
+        if data != nil {
+            let picImage = UIImage(data:data!)
+            vc.profilePicFromSegue = picImage
+        }
+        //Send username
+        vc.usernameFromSegue = user?.name
+        
         
     }
     

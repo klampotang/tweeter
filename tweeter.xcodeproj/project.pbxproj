@@ -17,6 +17,7 @@
 		88EE55FF1D21EAED00E1BC51 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE55FE1D21EAED00E1BC51 /* APIClient.swift */; };
 		88EE56011D21FBD700E1BC51 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE56001D21FBD700E1BC51 /* TweetsViewController.swift */; };
 		88EE56031D220F9F00E1BC51 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE56021D220F9F00E1BC51 /* TweetCell.swift */; };
+		88EE56051D23607900E1BC51 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE56041D23607900E1BC51 /* DetailViewController.swift */; };
 		F07BADD86A41B1C6B003A246 /* Pods_tweeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6659FD2275C155993456C691 /* Pods_tweeter.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		88EE55FE1D21EAED00E1BC51 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		88EE56001D21FBD700E1BC51 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		88EE56021D220F9F00E1BC51 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		88EE56041D23607900E1BC51 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C107E0CA3EDA6F76C575D09F /* Pods-tweeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tweeter/Pods-tweeter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				88EE55F51D21CD5A00E1BC51 /* LoginViewController.swift */,
 				88EE56001D21FBD700E1BC51 /* TweetsViewController.swift */,
 				88EE56021D220F9F00E1BC51 /* TweetCell.swift */,
+				88EE56041D23607900E1BC51 /* DetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				88EE56011D21FBD700E1BC51 /* TweetsViewController.swift in Sources */,
 				88EE55E41D21C97C00E1BC51 /* AppDelegate.swift in Sources */,
 				88EE55FF1D21EAED00E1BC51 /* APIClient.swift in Sources */,
+				88EE56051D23607900E1BC51 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

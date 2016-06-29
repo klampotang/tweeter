@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244.5" y="305.5"/>
+            <point key="canvasLocation" x="162.5" y="163.5"/>
         </scene>
         <!--Tweets View Controller-->
         <scene sceneID="Twi-NA-Ixr">
@@ -160,6 +160,7 @@
                                             <outlet property="timeLabel" destination="MZr-sS-8Fq" id="aHi-do-vss"/>
                                             <outlet property="tweetTextLabel" destination="zUD-MM-vqK" id="MFj-LN-Z2P"/>
                                             <outlet property="usernameLabel" destination="QES-ww-Oec" id="arg-UT-mkb"/>
+                                            <segue destination="dpr-34-8zY" kind="show" id="jlN-ta-2cC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -181,7 +182,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pji-oq-7pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.5" y="305.5"/>
+            <point key="canvasLocation" x="1185.5" y="110.5"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="kWQ-RM-GT7">
+            <objects>
+                <viewController id="dpr-34-8zY" customClass="DetailViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PnP-eo-X7K"/>
+                        <viewControllerLayoutGuide type="bottom" id="3nk-mv-MNi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v8z-Jc-m3H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L7n-hS-UYz">
+                                <rect key="frame" x="20" y="84" width="103" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="k7k-4z-dsf"/>
+                                    <constraint firstAttribute="height" constant="103" id="zDy-9h-0um"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RT#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pve-q2-fVm">
+                                <rect key="frame" x="323" y="84" width="32" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lZ-94-Zzu">
+                                <rect key="frame" x="241" y="83" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRb-v7-etf">
+                                <rect key="frame" x="316" y="120" width="30" height="30"/>
+                                <state key="normal" title="RT"/>
+                                <connections>
+                                    <action selector="rtAction:" destination="dpr-34-8zY" eventType="touchUpInside" id="ULH-S6-oCf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhm-Jj-R4j">
+                                <rect key="frame" x="241" y="119" width="30" height="30"/>
+                                <state key="normal" title="Like"/>
+                                <connections>
+                                    <action selector="likeAction:" destination="dpr-34-8zY" eventType="touchUpInside" id="aZV-fR-q95"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlv-V3-Lcw">
+                                <rect key="frame" x="20" y="227" width="335" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="UbV-ah-iuX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx9-eu-81X">
+                                <rect key="frame" x="20" y="197" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pve-q2-fVm" secondAttribute="trailing" constant="20" id="49e-c4-vO6"/>
+                            <constraint firstItem="KRb-v7-etf" firstAttribute="top" secondItem="pve-q2-fVm" secondAttribute="bottom" constant="15" id="4SI-Ii-fb7"/>
+                            <constraint firstItem="Gx9-eu-81X" firstAttribute="leading" secondItem="v8z-Jc-m3H" secondAttribute="leading" constant="20" id="4fu-ux-RX0"/>
+                            <constraint firstAttribute="trailing" secondItem="Gx9-eu-81X" secondAttribute="trailing" constant="20" id="CP1-kv-XUX"/>
+                            <constraint firstItem="KRb-v7-etf" firstAttribute="leading" secondItem="Xhm-Jj-R4j" secondAttribute="trailing" constant="45" id="F9k-6H-Vug"/>
+                            <constraint firstAttribute="trailing" secondItem="Vlv-V3-Lcw" secondAttribute="trailing" constant="20" id="JKx-Ce-0EI"/>
+                            <constraint firstItem="0lZ-94-Zzu" firstAttribute="top" secondItem="PnP-eo-X7K" secondAttribute="bottom" constant="19" id="K6H-mg-MeQ"/>
+                            <constraint firstItem="Gx9-eu-81X" firstAttribute="top" secondItem="L7n-hS-UYz" secondAttribute="bottom" constant="10" id="Qjc-ru-x3Q"/>
+                            <constraint firstItem="Xhm-Jj-R4j" firstAttribute="top" secondItem="0lZ-94-Zzu" secondAttribute="bottom" constant="15" id="R73-A3-wIH"/>
+                            <constraint firstItem="L7n-hS-UYz" firstAttribute="top" secondItem="PnP-eo-X7K" secondAttribute="bottom" constant="20" id="UUh-IX-as2"/>
+                            <constraint firstItem="L7n-hS-UYz" firstAttribute="leading" secondItem="v8z-Jc-m3H" secondAttribute="leading" constant="20" id="Z5A-7x-hjf"/>
+                            <constraint firstItem="Vlv-V3-Lcw" firstAttribute="leading" secondItem="v8z-Jc-m3H" secondAttribute="leading" constant="20" id="tOe-2U-vod"/>
+                            <constraint firstItem="pve-q2-fVm" firstAttribute="leading" secondItem="0lZ-94-Zzu" secondAttribute="trailing" constant="40" id="txn-G3-KSf"/>
+                            <constraint firstAttribute="trailing" secondItem="KRb-v7-etf" secondAttribute="trailing" constant="29" id="uhM-13-06u"/>
+                            <constraint firstItem="Vlv-V3-Lcw" firstAttribute="top" secondItem="L7n-hS-UYz" secondAttribute="bottom" constant="40" id="vw5-NG-jME"/>
+                            <constraint firstItem="pve-q2-fVm" firstAttribute="top" secondItem="PnP-eo-X7K" secondAttribute="bottom" constant="20" id="xCM-Mu-CA4"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="likeCountLabel" destination="0lZ-94-Zzu" id="3eU-5D-kcl"/>
+                        <outlet property="profilePicImage" destination="L7n-hS-UYz" id="grD-eS-U9J"/>
+                        <outlet property="rtCountLabel" destination="pve-q2-fVm" id="W5d-mD-YKm"/>
+                        <outlet property="tweetTextLabel" destination="Vlv-V3-Lcw" id="863-ta-R7H"/>
+                        <outlet property="usernameLabel" destination="Gx9-eu-81X" id="1gw-mz-XK5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8f-w5-4dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677.5" y="110.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hgs-dT-NjF">
@@ -199,7 +294,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bi-UG-5Xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="272"/>
+            <point key="canvasLocation" x="657.5" y="110.5"/>
         </scene>
     </scenes>
 </document>
