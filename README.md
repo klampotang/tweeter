@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 - [x] User should display the relative timestamp for each tweet "8m", "7h"
 - [ ] Retweeting and favoriting should increment the retweet and favorite count.
 - [ ] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
-- [ ] User can compose a new tweet by tapping on a compose button.
+- [x] User can compose a new tweet by tapping on a compose button.
 - [ ] User can tap the profile image in any tweet to see another user's profile
    - [ ] Contains the user header view: picture and tagline
    - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
