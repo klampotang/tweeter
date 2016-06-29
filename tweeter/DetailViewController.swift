@@ -81,5 +81,10 @@ class DetailViewController: UIViewController {
         
         return [likeAction, retweetAction, deleteAction]
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        let vc = segue.destinationViewController as! ReplyViewController
+        vc.tweetBeingRepliedTo = particularTweet
+    }
 
 }

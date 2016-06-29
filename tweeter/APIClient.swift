@@ -68,7 +68,15 @@ class APIClient: BDBOAuth1SessionManager {
             print("error")
         }
     }
-    
+    func replyStatus(params: NSMutableDictionary)
+    {
+        print(params)
+        POST("1.1/statuses/update.json", parameters: params, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            print("Succuess, replied to a status")
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            print(error)
+        }
+    }
     func login(success: () -> (), failure: (NSError)-> ())
     {
         loginSuccess = success
@@ -94,6 +102,7 @@ class APIClient: BDBOAuth1SessionManager {
         User.currentUser = nil
         NSNotificationCenter.defaultCenter().postNotificationName(User.userDidLogoutNotification, object: nil)
     }
+    
     func handleOpenUrl(url: NSURL)
     {
         let requestToken = BDBOAuth1Credential(queryString: url.query)

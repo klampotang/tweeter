@@ -248,6 +248,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Su-Y1-wiY">
+                                <rect key="frame" x="168" y="119" width="39" height="30"/>
+                                <state key="normal" title="Reply"/>
+                                <connections>
+                                    <segue destination="qnY-mu-TLe" kind="presentation" id="RVO-Re-qI2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -281,6 +288,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8f-w5-4dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2489.5" y="110.5"/>
+        </scene>
+        <!--Reply View Controller-->
+        <scene sceneID="T89-1p-gbo">
+            <objects>
+                <viewController id="qnY-mu-TLe" customClass="ReplyViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wS9-mU-uqK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qpp-yN-TbT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ltm-sf-ZRk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="reply to tweet" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LJb-RR-mbP">
+                                <rect key="frame" x="65" y="94" width="242" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QOY-Yj-86A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smp-K2-ZXx">
+                                <rect key="frame" x="170" y="249" width="34" height="30"/>
+                                <state key="normal" title="reply"/>
+                                <connections>
+                                    <action selector="replyClicked:" destination="qnY-mu-TLe" eventType="touchUpInside" id="zSB-Xx-Hil"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LJb-RR-mbP" secondAttribute="trailing" constant="68" id="QaB-VP-qzZ"/>
+                            <constraint firstItem="LJb-RR-mbP" firstAttribute="top" secondItem="wS9-mU-uqK" secondAttribute="bottom" constant="74" id="ga9-3H-Qd5"/>
+                            <constraint firstItem="LJb-RR-mbP" firstAttribute="leading" secondItem="Ltm-sf-ZRk" secondAttribute="leading" constant="65" id="zQH-Bp-Mrs"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="replyTextField" destination="LJb-RR-mbP" id="I2y-px-Gj3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nR-JG-SUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964.5" y="109.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="Hgs-dT-NjF">
