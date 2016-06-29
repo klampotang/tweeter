@@ -11,6 +11,7 @@ import UIKit
 class ComposeViewController: UIViewController {
 
     @IBOutlet weak var tweetEnterField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ComposeViewController.tap(_:)))
@@ -25,5 +26,11 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func tweetTapped(sender: AnyObject) {
+        if tweetEnterField.text != nil
+        {
+            let tweetText = tweetEnterField.text
+            APIClient.sharedInstance.postStatus(tweetText!)
+            tweetEnterField.text = "" //Clear the thing
+        }
     }
 }

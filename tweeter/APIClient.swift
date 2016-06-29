@@ -61,7 +61,8 @@ class APIClient: BDBOAuth1SessionManager {
     func postStatus(status: String)
     {
         let escapedString = status.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-        POST("1.1/statuses/update.json?status=\(escapedString)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+        print(escapedString)
+        POST("1.1/statuses/update.json?status=\(escapedString!)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
             print("Succuess, posted a status")
         }) { (task: NSURLSessionDataTask?, error: NSError) in
             print("error")
