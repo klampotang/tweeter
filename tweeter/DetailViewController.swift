@@ -52,7 +52,8 @@ class DetailViewController: UIViewController {
         APIClient.sharedInstance.retweet(idInt!, success: {
             dispatch_async(dispatch_get_main_queue()) {
                 //Update the retweet count
-                self.rtCountLabel.text = "Retweeted"
+                let oldRTCount = self.particularTweet?.retweetCount
+                self.rtCountLabel.text = "\(oldRTCount! + 1)"
             }
             },
         failure: { (error: NSError) -> () in
@@ -66,7 +67,8 @@ class DetailViewController: UIViewController {
         APIClient.sharedInstance.likeStatus(idInt!, success: {
             dispatch_async(dispatch_get_main_queue()) {
                 //Update the like count
-                self.likeCountLabel.text = "liked"
+                let oldLikeCount = self.particularTweet?.likeCount
+                self.likeCountLabel.text = "\(oldLikeCount!+1)"
             }
             },
             failure: { (error: NSError) -> () in
