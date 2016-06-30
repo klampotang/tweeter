@@ -138,25 +138,21 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //Send tweet
             vc.particularTweet = tweety
         }
-        else if segue.destinationViewController.restorationIdentifier == "GenProfileViewController"
+        if segue.destinationViewController.restorationIdentifier == "GenProfileViewController"
         {
-           /* let vc = segue.destinationViewController as! GenProfileViewController
-            let indexPath1 = tableView.indexPathForCell(sender as! TweetCell)
-            let tweety = self.tweets[indexPath1!.row]
+            let vc = segue.destinationViewController as! GenProfileViewController
+            var indexPath: NSIndexPath!
             
-            let author = tweety.author
-            let profileImageURL = author?.profileImage
+            if let button = sender as? UIButton {
+                if let superview = button.superview {
+                    if let cell = superview.superview as? TweetCell {
+                        indexPath = (tableView.indexPathForCell(cell))
+                    }
+                }
+            }
+            let tweet = self.tweets[indexPath.row]
             
-            //Make a UIImage from this:
-            let data = NSData(contentsOfURL:profileImageURL!)
-            if data != nil {
-                let picImage = UIImage(data:data!)
-                vc.profileImagefromSegue = picImage
-            }*/
-
-            
+            vc.genAuthor = tweet.author
         }
-    
-        
     }
 }

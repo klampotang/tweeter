@@ -392,9 +392,48 @@
                     <view key="view" contentMode="scaleToFill" id="tSt-OK-U2L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9AA-qu-qUR">
+                                <rect key="frame" x="15" y="79" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="N84-pZ-KIR"/>
+                                    <constraint firstAttribute="width" constant="100" id="yhj-mt-bKJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocD-uA-R2x">
+                                <rect key="frame" x="140" y="79" width="215" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZQ-rk-Hvh">
+                                <rect key="frame" x="140" y="128" width="215" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="u65-xt-zaL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ocD-uA-R2x" firstAttribute="leading" secondItem="9AA-qu-qUR" secondAttribute="trailing" constant="25" id="3Kg-b5-7i2"/>
+                            <constraint firstItem="9AA-qu-qUR" firstAttribute="leading" secondItem="tSt-OK-U2L" secondAttribute="leading" constant="15" id="GZg-9x-ayq"/>
+                            <constraint firstItem="EZQ-rk-Hvh" firstAttribute="leading" secondItem="9AA-qu-qUR" secondAttribute="trailing" constant="25" id="O15-oD-DFz"/>
+                            <constraint firstAttribute="trailing" secondItem="ocD-uA-R2x" secondAttribute="trailing" constant="20" id="Sfc-N9-a8u"/>
+                            <constraint firstItem="EZQ-rk-Hvh" firstAttribute="top" secondItem="ocD-uA-R2x" secondAttribute="bottom" constant="28" id="crr-wu-Bq2"/>
+                            <constraint firstAttribute="trailing" secondItem="EZQ-rk-Hvh" secondAttribute="trailing" constant="20" id="eOo-eT-kHm"/>
+                            <constraint firstItem="ocD-uA-R2x" firstAttribute="top" secondItem="lOG-gC-8Z7" secondAttribute="bottom" constant="15" id="gUD-Ld-ecl"/>
+                            <constraint firstItem="9AA-qu-qUR" firstAttribute="top" secondItem="lOG-gC-8Z7" secondAttribute="bottom" constant="15" id="rEp-m8-VGb"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="genProfilePic" destination="9AA-qu-qUR" id="yo0-el-A3f"/>
+                        <outlet property="genTaglineLabel" destination="EZQ-rk-Hvh" id="wgv-Yv-BGm"/>
+                        <outlet property="genUsernameLabel" destination="ocD-uA-R2x" id="Zpl-Nc-Z6e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8B-n2-t9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

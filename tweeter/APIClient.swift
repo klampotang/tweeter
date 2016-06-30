@@ -32,7 +32,7 @@ class APIClient: BDBOAuth1SessionManager {
     func retweet(id: String, success: () -> (), failure: (NSError) -> ())
     {
         POST("1.1/statuses/retweet/\(id).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
-            print("Success")
+            print("Retweeted the picture")
             success()
         }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
             print("Failure: \(error)")
@@ -42,7 +42,7 @@ class APIClient: BDBOAuth1SessionManager {
     func likeStatus(id: String, success: () -> (), failure: (NSError) -> ())
     {
         POST("1.1/favorites/create.json?id=\(id)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
-            print("YAY")
+            print("Liked the picture")
             success()
         }) { (task: NSURLSessionDataTask?, error: NSError) in
             print("failure: \(error)")

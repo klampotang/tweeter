@@ -10,26 +10,31 @@ import UIKit
 
 class GenProfileViewController: UIViewController {
 
+    @IBOutlet weak var genProfilePic: UIImageView!
+    @IBOutlet weak var genUsernameLabel: UILabel!
+    @IBOutlet weak var genTaglineLabel: UILabel!
+    
+    var genAuthor : User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //Get username
+        genUsernameLabel.text = genAuthor?.screenname
+        //get tagline
+        genTaglineLabel.text = genAuthor?.tagline
+        //get profile pic
+        let userImageURL = genAuthor?.profileImage
+        let data = NSData(contentsOfURL:userImageURL!)
+        if data != nil {
+            let genpic = UIImage(data:data!)
+            self.genProfilePic.image = genpic
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
