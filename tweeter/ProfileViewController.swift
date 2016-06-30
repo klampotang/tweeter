@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -17,9 +17,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var statusCountLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var tweets : [Tweet] = []
+    let dict: NSMutableDictionary = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //other setup
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         _ = APIClient.sharedInstance.currUser({ (user: User) in
             let userImageURL = user.profileImage
             let data = NSData(contentsOfURL:userImageURL!)
@@ -36,12 +44,16 @@ class ProfileViewController: UIViewController {
                 
                 let statusCount = user.statusCount
                 self.statusCountLabel.text = "\(statusCount!) statuses"
+                
+                self.dict["screen_name"] = user.screenname
             }
 
         }) { (error: NSError) in
                 print("error in displaying ur pic")
         }
         // Do any additional setup after loading the view.
+        
+        getUserTimeline()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,15 +61,32 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ProfileViewCell", forIndexPath: indexPath) as! ProfileViewCell
+        let tweety = tweets[indexPath.row]
+        //User
+        let userParticular = tweety.author
+        //Username
+        cell.usernameLabel.text = userParticular?.screenname
+        
+        //tweet
+        cell.tweetLabel.text = tweety.text
+        return cell
     }
-    */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count ?? 0
+    }
+
+    func getUserTimeline()
+    {
+        APIClient.sharedInstance.getUserTimeline(dict, success: { (tweets: [Tweet]) in
+            self.tweets = tweets
+            self.tableView.reloadData()
+            
+        }) { (error: NSError) in
+            
+        }
+    }
 
 }

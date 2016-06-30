@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88B6CF011D25B7AA00E8BBEF /* GenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6CF001D25B7AA00E8BBEF /* GenViewCell.swift */; };
+		88B6CF031D25BB7400E8BBEF /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6CF021D25BB7400E8BBEF /* ProfileViewCell.swift */; };
 		88EE55E41D21C97C00E1BC51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EE55E31D21C97C00E1BC51 /* AppDelegate.swift */; };
 		88EE55E91D21C97C00E1BC51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EE55E71D21C97C00E1BC51 /* Main.storyboard */; };
 		88EE55EB1D21C97C00E1BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88EE55EA1D21C97C00E1BC51 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		5FE66E2AA747762E8AC07393 /* Pods-tweeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweeter/Pods-tweeter.release.xcconfig"; sourceTree = "<group>"; };
 		6659FD2275C155993456C691 /* Pods_tweeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B6CF001D25B7AA00E8BBEF /* GenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenViewCell.swift; sourceTree = "<group>"; };
+		88B6CF021D25BB7400E8BBEF /* ProfileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		88EE55E01D21C97C00E1BC51 /* tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88EE55E31D21C97C00E1BC51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88EE55E81D21C97C00E1BC51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				88EE560A1D24752900E1BC51 /* ProfileViewController.swift */,
 				88EE560C1D2486F900E1BC51 /* GenProfileViewController.swift */,
 				88B6CF001D25B7AA00E8BBEF /* GenViewCell.swift */,
+				88B6CF021D25BB7400E8BBEF /* ProfileViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				88EE560B1D24752900E1BC51 /* ProfileViewController.swift in Sources */,
 				88EE56011D21FBD700E1BC51 /* TweetsViewController.swift in Sources */,
 				88EE55E41D21C97C00E1BC51 /* AppDelegate.swift in Sources */,
+				88B6CF031D25BB7400E8BBEF /* ProfileViewCell.swift in Sources */,
 				88EE55FF1D21EAED00E1BC51 /* APIClient.swift in Sources */,
 				88EE56051D23607900E1BC51 /* DetailViewController.swift in Sources */,
 				88EE560D1D2486F900E1BC51 /* GenProfileViewController.swift in Sources */,
