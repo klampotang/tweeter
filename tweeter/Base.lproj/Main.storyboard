@@ -414,24 +414,54 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20i-Kb-afh">
+                                <rect key="frame" x="20" y="406" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKK-9w-s5i">
+                                <rect key="frame" x="20" y="442" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statuses Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9j-5k-Njt">
+                                <rect key="frame" x="22" y="371" width="333" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cKK-9w-s5i" firstAttribute="top" secondItem="20i-Kb-afh" secondAttribute="bottom" constant="15" id="19T-LT-hFE"/>
                             <constraint firstItem="ocD-uA-R2x" firstAttribute="leading" secondItem="9AA-qu-qUR" secondAttribute="trailing" constant="25" id="3Kg-b5-7i2"/>
+                            <constraint firstItem="20i-Kb-afh" firstAttribute="leading" secondItem="tSt-OK-U2L" secondAttribute="leading" constant="20" id="6Ax-HE-MSr"/>
+                            <constraint firstItem="b9j-5k-Njt" firstAttribute="leading" secondItem="tSt-OK-U2L" secondAttribute="leading" constant="22" id="EzH-Qs-qQ7"/>
                             <constraint firstItem="9AA-qu-qUR" firstAttribute="leading" secondItem="tSt-OK-U2L" secondAttribute="leading" constant="15" id="GZg-9x-ayq"/>
                             <constraint firstItem="EZQ-rk-Hvh" firstAttribute="leading" secondItem="9AA-qu-qUR" secondAttribute="trailing" constant="25" id="O15-oD-DFz"/>
                             <constraint firstAttribute="trailing" secondItem="ocD-uA-R2x" secondAttribute="trailing" constant="20" id="Sfc-N9-a8u"/>
+                            <constraint firstAttribute="trailing" secondItem="b9j-5k-Njt" secondAttribute="trailing" constant="20" id="WBy-83-6b0"/>
+                            <constraint firstAttribute="trailing" secondItem="20i-Kb-afh" secondAttribute="trailing" constant="20" id="WGg-ss-npj"/>
+                            <constraint firstItem="20i-Kb-afh" firstAttribute="top" secondItem="b9j-5k-Njt" secondAttribute="bottom" constant="14" id="X1h-iF-6Te"/>
                             <constraint firstItem="EZQ-rk-Hvh" firstAttribute="top" secondItem="ocD-uA-R2x" secondAttribute="bottom" constant="28" id="crr-wu-Bq2"/>
                             <constraint firstAttribute="trailing" secondItem="EZQ-rk-Hvh" secondAttribute="trailing" constant="20" id="eOo-eT-kHm"/>
                             <constraint firstItem="ocD-uA-R2x" firstAttribute="top" secondItem="lOG-gC-8Z7" secondAttribute="bottom" constant="15" id="gUD-Ld-ecl"/>
+                            <constraint firstAttribute="trailing" secondItem="cKK-9w-s5i" secondAttribute="trailing" constant="20" id="hGg-DU-pQr"/>
+                            <constraint firstItem="b9j-5k-Njt" firstAttribute="top" secondItem="9AA-qu-qUR" secondAttribute="bottom" constant="192" id="ioA-eP-TEX"/>
                             <constraint firstItem="9AA-qu-qUR" firstAttribute="top" secondItem="lOG-gC-8Z7" secondAttribute="bottom" constant="15" id="rEp-m8-VGb"/>
+                            <constraint firstItem="cKK-9w-s5i" firstAttribute="leading" secondItem="tSt-OK-U2L" secondAttribute="leading" constant="20" id="tie-b5-447"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="followersCountLabel" destination="20i-Kb-afh" id="Q8B-pz-eOC"/>
+                        <outlet property="followingCountLabel" destination="cKK-9w-s5i" id="fLr-oG-6VG"/>
                         <outlet property="genProfilePic" destination="9AA-qu-qUR" id="yo0-el-A3f"/>
                         <outlet property="genTaglineLabel" destination="EZQ-rk-Hvh" id="wgv-Yv-BGm"/>
                         <outlet property="genUsernameLabel" destination="ocD-uA-R2x" id="Zpl-Nc-Z6e"/>
+                        <outlet property="statusCountLabel" destination="b9j-5k-Njt" id="eee-Fe-hZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8B-n2-t9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -533,14 +563,14 @@
                                     <constraint firstAttribute="width" constant="80" id="hWE-Qg-cey"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UsernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-zT-Prr">
-                                <rect key="frame" x="130" y="35" width="192" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-zT-Prr">
+                                <rect key="frame" x="130" y="35" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TaglineLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkS-cM-8sy">
-                                <rect key="frame" x="130" y="79" width="219.5" height="204.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaglineLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkS-cM-8sy">
+                                <rect key="frame" x="130" y="79" width="219.5" height="210"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="YaN-T7-mCd"/>
                                     <constraint firstAttribute="width" constant="219.5" id="hXX-xG-tok"/>
@@ -549,13 +579,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statuses Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-nU-Qu8">
+                                <rect key="frame" x="15" y="344" width="340" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gej-tJ-6Zs">
+                                <rect key="frame" x="15" y="385" width="340" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myx-nP-eUe">
+                                <rect key="frame" x="15" y="431" width="340" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5ZI-zT-Prr" firstAttribute="top" secondItem="d6C-68-akW" secondAttribute="bottom" constant="15" id="9qi-Yq-sIb"/>
+                            <constraint firstAttribute="trailing" secondItem="Myx-nP-eUe" secondAttribute="trailing" constant="20" id="CNb-Et-Ujl"/>
                             <constraint firstItem="5ZI-zT-Prr" firstAttribute="leading" secondItem="X3V-Ea-BHY" secondAttribute="trailing" constant="35" id="HBU-FY-ftg"/>
+                            <constraint firstAttribute="trailing" secondItem="KkZ-nU-Qu8" secondAttribute="trailing" constant="20" id="IhI-3q-xql"/>
+                            <constraint firstItem="KkZ-nU-Qu8" firstAttribute="top" secondItem="X3V-Ea-BHY" secondAttribute="bottom" constant="229" id="L9j-08-D1L"/>
+                            <constraint firstItem="Myx-nP-eUe" firstAttribute="top" secondItem="Gej-tJ-6Zs" secondAttribute="bottom" constant="25" id="MZu-jX-p7r"/>
+                            <constraint firstItem="Gej-tJ-6Zs" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" constant="15" id="NCF-gp-9sH"/>
                             <constraint firstItem="X3V-Ea-BHY" firstAttribute="top" secondItem="d6C-68-akW" secondAttribute="bottom" constant="15" id="OKC-SR-yXE"/>
+                            <constraint firstAttribute="trailing" secondItem="Gej-tJ-6Zs" secondAttribute="trailing" constant="20" id="WtY-8M-RFE"/>
+                            <constraint firstItem="Gej-tJ-6Zs" firstAttribute="top" secondItem="KkZ-nU-Qu8" secondAttribute="bottom" constant="20" id="aRC-ma-Ohl"/>
+                            <constraint firstItem="KkZ-nU-Qu8" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" constant="15" id="acL-Od-Kiy"/>
                             <constraint firstItem="OkS-cM-8sy" firstAttribute="leading" secondItem="X3V-Ea-BHY" secondAttribute="trailing" constant="35" id="gf4-kR-nMd"/>
+                            <constraint firstAttribute="trailing" secondItem="5ZI-zT-Prr" secondAttribute="trailing" constant="20" id="hTT-Q1-cOb"/>
+                            <constraint firstItem="Myx-nP-eUe" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" constant="15" id="iHH-of-7tV"/>
                             <constraint firstItem="X3V-Ea-BHY" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" constant="15" id="jhd-YG-0Xg"/>
                             <constraint firstItem="OkS-cM-8sy" firstAttribute="top" secondItem="5ZI-zT-Prr" secondAttribute="bottom" constant="23" id="obz-yJ-2OC"/>
                         </constraints>
@@ -563,7 +621,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="yyV-dL-UgW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="followersCountLabel" destination="Gej-tJ-6Zs" id="MHg-uE-UX3"/>
+                        <outlet property="followingCountLabel" destination="Myx-nP-eUe" id="wee-0L-esS"/>
                         <outlet property="profileImageView" destination="X3V-Ea-BHY" id="pov-FU-rit"/>
+                        <outlet property="statusCountLabel" destination="KkZ-nU-Qu8" id="NdR-eY-ERU"/>
                         <outlet property="taglineLabel" destination="OkS-cM-8sy" id="yhs-Py-Hdp"/>
                         <outlet property="usernameLabel" destination="5ZI-zT-Prr" id="lee-gO-Qcm"/>
                     </connections>

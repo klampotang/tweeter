@@ -17,6 +17,9 @@ class User: NSObject {
     var profileImage: NSURL?
     var tagline: String?
     var dictionary : NSDictionary?
+    var statusCount : Int?
+    var followingCount : Int?
+    var followersCount : Int?
     
     init(dictionary: NSDictionary)
     {
@@ -31,6 +34,11 @@ class User: NSObject {
         }
         
         tagline = dictionary["description"] as? String
+        
+        followingCount = dictionary["friends_count"] as? Int
+        statusCount = dictionary["statuses_count"] as? Int
+        followersCount = dictionary["followers_count"] as? Int
+        
     }
     static var _currentUser: User?
     

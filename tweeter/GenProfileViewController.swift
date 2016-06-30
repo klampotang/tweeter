@@ -13,6 +13,9 @@ class GenProfileViewController: UIViewController {
     @IBOutlet weak var genProfilePic: UIImageView!
     @IBOutlet weak var genUsernameLabel: UILabel!
     @IBOutlet weak var genTaglineLabel: UILabel!
+    @IBOutlet weak var statusCountLabel: UILabel!
+    @IBOutlet weak var followersCountLabel: UILabel!
+    @IBOutlet weak var followingCountLabel: UILabel!
     
     var genAuthor : User?
     
@@ -30,7 +33,15 @@ class GenProfileViewController: UIViewController {
             let genpic = UIImage(data:data!)
             self.genProfilePic.image = genpic
         }
-        
+        //Get status count
+        let statusCount = genAuthor?.statusCount
+        statusCountLabel.text = "\(statusCount!) statuses"
+        //Get followers Count
+        let followerCount = genAuthor?.followersCount
+        followersCountLabel.text = "\(followerCount!) followers"
+        //Get following count
+        let followingCount = genAuthor?.followingCount
+        followingCountLabel.text = "\(followingCount!) following"
     }
 
     override func didReceiveMemoryWarning() {

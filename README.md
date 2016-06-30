@@ -17,13 +17,13 @@ The following **required** functionality is completed:
 - [x] Retweeting and favoriting should increment the retweet and favorite count.
 - [x] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 - [x] User can compose a new tweet by tapping on a compose button.
-- [ ] User can tap the profile image in any tweet to see another user's profile
-   - [ ] Contains the user header view: picture and tagline
-   - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
+- [x] User can tap the profile image in any tweet to see another user's profile
+   - [x] Contains the user header view: picture and tagline
+   - [x] Contains a section with the users basic stats: # tweets, # following, # followers
    - [ ] Profile view should include that user's timeline
 - [x] User can navigate to view their own profile
    - [x] Contains the user header view: picture and tagline
-   - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
+   - [x] Contains a section with the users basic stats: # tweets, # following, # followers
 
 The following **optional** features are implemented:
 
