@@ -39,7 +39,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //Tweet text
         cell.tweetTextLabel.text = tweety.text
-        
+        cell.tweety = tweety
         //Date
         let datey = tweety.createdAt! as NSDate
         let dateFormatter = NSDateFormatter()
@@ -109,45 +109,6 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 getTimeline()
             }
         }
-    }
-    @IBAction func likeTouched(sender: AnyObject) {
-        
-       var indexPath: NSIndexPath!
-        if let button = sender as? UIButton {
-            if let superview = button.superview {
-                if let cell = superview.superview as? TweetCell {
-                    indexPath = (tableView.indexPathForCell(cell))
-                }
-            }
-        }
-        let tweety = tweets[indexPath.row]
-        let idInt = tweety.id
-        APIClient.sharedInstance.likeStatus(idInt!)
-        let cell1 = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
-        //let likesCountNum = tweety.likeCount
-        cell1.likeCountLabel.text = "Liked" // WHY NOT WORKING
-        self.tableView.reloadData()
-    }
-    @IBAction func retweetTouched(sender: AnyObject) {
-        var indexPath: NSIndexPath!
-        
-        if let button = sender as? UIButton {
-            if let superview = button.superview {
-                if let cell = superview.superview as? TweetCell {
-                    indexPath = (tableView.indexPathForCell(cell))
-                }
-            }
-        }
-        let tweety = tweets[indexPath.row]
-        let idInt = tweety.id
-        APIClient.sharedInstance.retweet(idInt!, success: { (tweet: Tweet) -> Void in
-            let cell1 = self.tableView.cellForRowAtIndexPath(indexPath) as! TweetCell
-            cell1.retweetCountLabel.text = "Retweeted"
-            self.tableView.reloadData()},
-            failure: { (error: NSError) -> () in
-                //print("error: \(error.localizedDesciption)")
-        })
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

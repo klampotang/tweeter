@@ -99,7 +99,7 @@
                                                     </constraints>
                                                     <state key="normal" title="RT"/>
                                                     <connections>
-                                                        <action selector="retweetTouched:" destination="V0L-eo-fjf" eventType="touchUpInside" id="5hF-3I-lhg"/>
+                                                        <action selector="retweetTouched:" destination="oI9-lF-ILG" eventType="touchUpInside" id="qZD-3A-avE"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csr-58-eOY">
@@ -110,7 +110,7 @@
                                                     </constraints>
                                                     <state key="normal" title="Like"/>
                                                     <connections>
-                                                        <action selector="likeTouched:" destination="V0L-eo-fjf" eventType="touchUpInside" id="VWY-CA-PU4"/>
+                                                        <action selector="likeTapped:" destination="oI9-lF-ILG" eventType="touchUpInside" id="aDN-HF-hoi"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9J-X4-ruc">
@@ -480,8 +480,18 @@
                                     <constraint firstAttribute="width" constant="80" id="hWE-Qg-cey"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-zT-Prr">
-                                <rect key="frame" x="130" y="64" width="192" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UsernameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZI-zT-Prr">
+                                <rect key="frame" x="130" y="35" width="192" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TaglineLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkS-cM-8sy">
+                                <rect key="frame" x="130" y="79" width="219.5" height="204.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="YaN-T7-mCd"/>
+                                    <constraint firstAttribute="width" constant="219.5" id="hXX-xG-tok"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -489,20 +499,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5ZI-zT-Prr" firstAttribute="top" secondItem="d6C-68-akW" secondAttribute="bottom" constant="15" id="9qi-Yq-sIb"/>
+                            <constraint firstItem="5ZI-zT-Prr" firstAttribute="leading" secondItem="X3V-Ea-BHY" secondAttribute="trailing" constant="35" id="HBU-FY-ftg"/>
                             <constraint firstItem="X3V-Ea-BHY" firstAttribute="top" secondItem="d6C-68-akW" secondAttribute="bottom" constant="15" id="OKC-SR-yXE"/>
+                            <constraint firstItem="OkS-cM-8sy" firstAttribute="leading" secondItem="X3V-Ea-BHY" secondAttribute="trailing" constant="35" id="gf4-kR-nMd"/>
                             <constraint firstItem="X3V-Ea-BHY" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" constant="15" id="jhd-YG-0Xg"/>
+                            <constraint firstItem="OkS-cM-8sy" firstAttribute="top" secondItem="5ZI-zT-Prr" secondAttribute="bottom" constant="23" id="obz-yJ-2OC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="yyV-dL-UgW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="profileImageView" destination="X3V-Ea-BHY" id="pov-FU-rit"/>
+                        <outlet property="taglineLabel" destination="OkS-cM-8sy" id="yhs-Py-Hdp"/>
                         <outlet property="usernameLabel" destination="5ZI-zT-Prr" id="lee-gO-Qcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIO-4L-1UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="525.5" y="1000.5"/>
+            <point key="canvasLocation" x="527.5" y="1057.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

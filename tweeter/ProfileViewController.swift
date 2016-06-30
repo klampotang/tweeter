@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var taglineLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ProfileViewController: UIViewController {
                 let picImage = UIImage(data:data!)
                 self.profileImageView.image = picImage
                 self.usernameLabel.text = user.screenname
+                self.taglineLabel.text = user.tagline
             }
 
         }) { (error: NSError) in

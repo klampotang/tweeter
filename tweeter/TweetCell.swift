@@ -21,6 +21,27 @@ class TweetCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    var tweety:Tweet?
+    
+    @IBAction func likeTapped(sender: AnyObject) {
+        let idString = tweety!.id
+        APIClient.sharedInstance.likeStatus(idString!, success: {
+            self.likeCountLabel.text = "\((self.tweety?.likeCount)!+1)"
+            }, failure: { (error: NSError) -> () in
+                print("error:")
+                print(error.localizedDescription)
+        })
+    }
+    @IBAction func retweetTouched(sender: AnyObject) {
+        
+        let idInt = self.tweety!.id
+        APIClient.sharedInstance.retweet(idInt!, success: { 
+            self.retweetCountLabel.text = "\((self.tweety?.retweetCount)!+1)"
+        }, failure: { (error: NSError) -> () in
+            print("error:")
+            print(error.localizedDescription)
+        })
+    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

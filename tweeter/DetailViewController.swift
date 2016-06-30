@@ -49,8 +49,7 @@ class DetailViewController: UIViewController {
     func retweet()
     {
         let idInt = particularTweet!.id
-        APIClient.sharedInstance.retweet(idInt!, success: { (tweet: Tweet) -> Void in
-            
+        APIClient.sharedInstance.retweet(idInt!, success: {
             dispatch_async(dispatch_get_main_queue()) {
                 //Update the retweet count
                 self.rtCountLabel.text = "Retweeted"
@@ -64,9 +63,16 @@ class DetailViewController: UIViewController {
     func like()
     {
         let idInt = particularTweet!.id
-        APIClient.sharedInstance.likeStatus(idInt!)
-        //Update like thing
-        likeCountLabel.text = "hi" //Fix this later
+        APIClient.sharedInstance.likeStatus(idInt!, success: {
+            dispatch_async(dispatch_get_main_queue()) {
+                //Update the like count
+                self.likeCountLabel.text = "liked"
+            }
+            },
+            failure: { (error: NSError) -> () in
+            //print("error: \(error.localizedDesciption)")
+        })
+
     }
     
     override func previewActionItems() -> [UIPreviewActionItem] {
