@@ -29,6 +29,21 @@ class APIClient: BDBOAuth1SessionManager {
         })
     }
     
+    func getUserTimeline(params: NSMutableDictionary, success: ([Tweet]) -> (), failure: (NSError) -> ())
+    {
+        print(params)
+        GET("1.1/statuses/user_timeline.json", parameters: params, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            print("Succuess, got user's timeline")
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries)
+            success(tweets)
+            
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            print(error)
+            failure(error)
+        }
+    }
+    
     func retweet(id: String, success: () -> (), failure: (NSError) -> ())
     {
         POST("1.1/statuses/retweet/\(id).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
