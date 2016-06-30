@@ -41,5 +41,10 @@ class ReplyViewController: UIViewController {
         APIClient.sharedInstance.replyStatus(dict)
         dismissViewControllerAnimated(true, completion: nil)
     }
+    @IBAction func dismissClicked(sender: AnyObject) {
+        replyTextField.text = ""
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
 
 }

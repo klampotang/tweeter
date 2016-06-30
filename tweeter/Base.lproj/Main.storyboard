@@ -330,9 +330,24 @@
                                     <action selector="replyClicked:" destination="qnY-mu-TLe" eventType="touchUpInside" id="zSB-Xx-Hil"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoT-Pm-Gl3">
+                                <rect key="frame" x="65" y="249" width="52" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="PlI-0I-VUm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="oDM-D2-mAs"/>
+                                    <constraint firstAttribute="height" constant="30" id="pMT-5E-DY8"/>
+                                    <constraint firstAttribute="width" constant="52" id="qO4-hO-xFr"/>
+                                </constraints>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <action selector="dismissClicked:" destination="qnY-mu-TLe" eventType="touchUpInside" id="5v2-ax-jCj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qoT-Pm-Gl3" firstAttribute="top" secondItem="LJb-RR-mbP" secondAttribute="bottom" constant="55" id="BV8-X2-mUm"/>
+                            <constraint firstItem="qoT-Pm-Gl3" firstAttribute="leading" secondItem="Ltm-sf-ZRk" secondAttribute="leading" constant="65" id="IKO-gD-38M"/>
                             <constraint firstAttribute="trailing" secondItem="LJb-RR-mbP" secondAttribute="trailing" constant="68" id="QaB-VP-qzZ"/>
                             <constraint firstItem="LJb-RR-mbP" firstAttribute="top" secondItem="wS9-mU-uqK" secondAttribute="bottom" constant="74" id="ga9-3H-Qd5"/>
                             <constraint firstItem="LJb-RR-mbP" firstAttribute="leading" secondItem="Ltm-sf-ZRk" secondAttribute="leading" constant="65" id="zQH-Bp-Mrs"/>
