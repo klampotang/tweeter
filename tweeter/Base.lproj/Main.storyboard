@@ -139,7 +139,6 @@
                                                         <constraint firstAttribute="height" constant="65" id="NP2-GG-GUn"/>
                                                         <constraint firstAttribute="width" constant="65" id="t9K-hM-p52"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
                                                     <connections>
                                                         <segue destination="MRg-Xo-zuv" kind="show" id="lEg-dC-rhM"/>
                                                     </connections>
@@ -269,7 +268,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pve-q2-fVm" secondAttribute="trailing" constant="20" id="49e-c4-vO6"/>
                             <constraint firstItem="KRb-v7-etf" firstAttribute="top" secondItem="pve-q2-fVm" secondAttribute="bottom" constant="15" id="4SI-Ii-fb7"/>
@@ -406,10 +405,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZQ-rk-Hvh">
-                                <rect key="frame" x="140" y="128" width="215" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZQ-rk-Hvh">
+                                <rect key="frame" x="140" y="128" width="215" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="u65-xt-zaL"/>
+                                    <constraint firstAttribute="height" constant="200" id="u65-xt-zaL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
