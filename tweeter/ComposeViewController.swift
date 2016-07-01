@@ -8,15 +8,23 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
-
-    @IBOutlet weak var tweetEnterField: UITextField!
+class ComposeViewController: UIViewController, UITextViewDelegate {
+    @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var tweetEnterField: UITextView!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tweetEnterField.layer.borderWidth = 1
+        let myColor = UIColor.blackColor()
+        self.tweetEnterField.layer.borderColor = myColor.CGColor
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ComposeViewController.tap(_:)))
         view.addGestureRecognizer(tapGesture)
+        textView.delegate = self
     }
+    
     func tap(gesture: UITapGestureRecognizer) {
         tweetEnterField.resignFirstResponder()
     }
@@ -32,5 +40,15 @@ class ComposeViewController: UIViewController {
             APIClient.sharedInstance.postStatus(tweetText!)
             tweetEnterField.text = "" //Clear the thing
         }
+    }
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let newLength = (textView.text.utf16).count + (text.utf16).count - range.length
+        if(newLength <= 140){
+            self.countdownLabel.text = "\(140 - newLength)"
+            return true
+        }else{
+            return false
+        }
+        
     }
 }
