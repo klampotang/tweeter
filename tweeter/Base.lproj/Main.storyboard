@@ -367,11 +367,11 @@
             </objects>
             <point key="canvasLocation" x="2964.5" y="109.5"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="Hgs-dT-NjF">
             <objects>
                 <navigationController storyboardIdentifier="TweetsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wRT-pT-Qox" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bLd-Pk-Fzp"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="bLd-Pk-Fzp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hcl-4e-qKY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -518,7 +518,7 @@
             </objects>
             <point key="canvasLocation" x="2330.5" y="935.5"/>
         </scene>
-        <!--Item-->
+        <!--Mentions-->
         <scene sceneID="wWp-vV-soy">
             <objects>
                 <viewController id="eYK-0d-Qbj" customClass="MentionsViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
@@ -548,7 +548,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcH-3F-QfS">
-                                                    <rect key="frame" x="10" y="41" width="355" height="80"/>
+                                                    <rect key="frame" x="10" y="51" width="355" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="vjl-mf-8N4"/>
                                                     </constraints>
@@ -558,7 +558,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="su8-BH-NuW" firstAttribute="top" secondItem="EzU-4G-oSu" secondAttribute="top" constant="10" id="BFC-Gx-5LG"/>
+                                                <constraint firstItem="su8-BH-NuW" firstAttribute="top" secondItem="EzU-4G-oSu" secondAttribute="top" constant="20" id="BFC-Gx-5LG"/>
                                                 <constraint firstItem="su8-BH-NuW" firstAttribute="leading" secondItem="EzU-4G-oSu" secondAttribute="leading" constant="10" id="JxR-71-Fh8"/>
                                                 <constraint firstAttribute="trailing" secondItem="hcH-3F-QfS" secondAttribute="trailing" constant="10" id="Ppj-pl-PXb"/>
                                                 <constraint firstItem="hcH-3F-QfS" firstAttribute="top" secondItem="su8-BH-NuW" secondAttribute="bottom" constant="10" id="Und-AG-iY3"/>
@@ -576,7 +576,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7we-nh-Gsn"/>
+                    <tabBarItem key="tabBarItem" title="Mentions" id="7we-nh-Gsn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="fkX-vW-01G" id="Deh-hw-Fih"/>
@@ -586,7 +586,7 @@
             </objects>
             <point key="canvasLocation" x="709.5" y="1110.5"/>
         </scene>
-        <!--Item-->
+        <!--Compose-->
         <scene sceneID="Ldj-uO-AxH">
             <objects>
                 <viewController id="3dF-C7-GuF" customClass="ComposeViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
@@ -644,7 +644,7 @@
                             <outletCollection property="gestureRecognizers" destination="fso-QR-g9G" appends="YES" id="ZKr-bm-oPp"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Bb9-Qq-jTm"/>
+                    <tabBarItem key="tabBarItem" title="Compose" id="Bb9-Qq-jTm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="countdownLabel" destination="ecg-Sj-Hus" id="SeJ-Od-TlP"/>
@@ -669,15 +669,15 @@
                     <connections>
                         <segue destination="wRT-pT-Qox" kind="relationship" relationship="viewControllers" id="Zkm-p2-AYi"/>
                         <segue destination="3dF-C7-GuF" kind="relationship" relationship="viewControllers" id="4uN-z8-0f0"/>
-                        <segue destination="Dwk-58-2ha" kind="relationship" relationship="viewControllers" id="7gZ-0R-N30"/>
                         <segue destination="eYK-0d-Qbj" kind="relationship" relationship="viewControllers" id="1uL-Fd-gVh"/>
+                        <segue destination="Dwk-58-2ha" kind="relationship" relationship="viewControllers" id="7gZ-0R-N30"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMI-hF-RGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="770" y="110"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="3TH-QN-1bm">
             <objects>
                 <viewController id="Dwk-58-2ha" customClass="ProfileViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
@@ -795,7 +795,7 @@
                             <constraint firstItem="OkS-cM-8sy" firstAttribute="top" secondItem="5ZI-zT-Prr" secondAttribute="bottom" constant="23" id="obz-yJ-2OC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yyV-dL-UgW"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="yyV-dL-UgW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="followersCountLabel" destination="Gej-tJ-6Zs" id="MHg-uE-UX3"/>
