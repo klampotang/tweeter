@@ -127,6 +127,9 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUD-MM-vqK">
                                                     <rect key="frame" x="8" y="86" width="359" height="100"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="HaQ-OL-2FL"/>
                                                     </constraints>
@@ -247,6 +250,9 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vlv-V3-Lcw">
                                 <rect key="frame" x="20" y="227" width="335" height="200"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="UbV-ah-iuX"/>
                                 </constraints>
@@ -513,6 +519,74 @@
             <point key="canvasLocation" x="2330.5" y="935.5"/>
         </scene>
         <!--Item-->
+        <scene sceneID="wWp-vV-soy">
+            <objects>
+                <viewController id="eYK-0d-Qbj" customClass="MentionsViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="um0-k5-r9X"/>
+                        <viewControllerLayoutGuide type="bottom" id="jkJ-kj-ueI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OjB-TW-zg1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="192" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fkX-vW-01G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MentionsViewCell" rowHeight="192" id="Otw-p2-xhT" customClass="MentionsViewCell" customModule="tweeter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="192"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Otw-p2-xhT" id="EzU-4G-oSu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="191.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su8-BH-NuW">
+                                                    <rect key="frame" x="10" y="8" width="355" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcH-3F-QfS">
+                                                    <rect key="frame" x="10" y="41" width="355" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="vjl-mf-8N4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="su8-BH-NuW" firstAttribute="top" secondItem="EzU-4G-oSu" secondAttribute="top" constant="10" id="BFC-Gx-5LG"/>
+                                                <constraint firstItem="su8-BH-NuW" firstAttribute="leading" secondItem="EzU-4G-oSu" secondAttribute="leading" constant="10" id="JxR-71-Fh8"/>
+                                                <constraint firstAttribute="trailing" secondItem="hcH-3F-QfS" secondAttribute="trailing" constant="10" id="Ppj-pl-PXb"/>
+                                                <constraint firstItem="hcH-3F-QfS" firstAttribute="top" secondItem="su8-BH-NuW" secondAttribute="bottom" constant="10" id="Und-AG-iY3"/>
+                                                <constraint firstAttribute="trailing" secondItem="su8-BH-NuW" secondAttribute="trailing" constant="10" id="ond-8a-zfP"/>
+                                                <constraint firstItem="hcH-3F-QfS" firstAttribute="leading" secondItem="EzU-4G-oSu" secondAttribute="leading" constant="10" id="yr9-cb-1L8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tweetLabel" destination="hcH-3F-QfS" id="XZU-MX-1wL"/>
+                                            <outlet property="usernameLabel" destination="su8-BH-NuW" id="t3V-yU-WIy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="7we-nh-Gsn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="fkX-vW-01G" id="Deh-hw-Fih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kd-23-Vik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709.5" y="1110.5"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="Ldj-uO-AxH">
             <objects>
                 <viewController id="3dF-C7-GuF" customClass="ComposeViewController" customModule="tweeter" customModuleProvider="target" sceneMemberID="viewController">
@@ -554,7 +628,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -597,6 +670,7 @@
                         <segue destination="wRT-pT-Qox" kind="relationship" relationship="viewControllers" id="Zkm-p2-AYi"/>
                         <segue destination="3dF-C7-GuF" kind="relationship" relationship="viewControllers" id="4uN-z8-0f0"/>
                         <segue destination="Dwk-58-2ha" kind="relationship" relationship="viewControllers" id="7gZ-0R-N30"/>
+                        <segue destination="eYK-0d-Qbj" kind="relationship" relationship="viewControllers" id="1uL-Fd-gVh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMI-hF-RGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,7 +809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIO-4L-1UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527.5" y="1057.5"/>
+            <point key="canvasLocation" x="300.5" y="999.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

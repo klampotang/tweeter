@@ -43,7 +43,16 @@ class APIClient: BDBOAuth1SessionManager {
             failure(error)
         }
     }
-    
+    func mentions(success: ([Tweet]) -> (), failure: (NSError) -> ())
+    {
+        GET("1.1/statuses/mentions_timeline.json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries)
+            success(tweets)
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            print(error)
+        }
+    }
     func retweet(id: String, success: () -> (), failure: (NSError) -> ())
     {
         POST("1.1/statuses/retweet/\(id).json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
