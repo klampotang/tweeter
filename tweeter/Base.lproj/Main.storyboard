@@ -907,9 +907,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C1B-ae-e6t">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="u1d-MX-5Q7"/>
+                                    <constraint firstAttribute="height" constant="95" id="u1d-MX-5Q7"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X3V-Ea-BHY">
@@ -934,6 +934,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ers#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gej-tJ-6Zs">
                                 <rect key="frame" x="98" y="219" width="25.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ing#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myx-nP-eUe">
+                                <rect key="frame" x="203" y="219" width="25" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1024,12 +1030,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ing#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myx-nP-eUe">
-                                <rect key="frame" x="203" y="219" width="25" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-3D-3Ox">
+                                <rect key="frame" x="0.0" y="235" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.24789870689999999" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Gml-jK-HPM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1043,6 +1050,7 @@
                             <constraint firstItem="Myx-nP-eUe" firstAttribute="top" secondItem="OkS-cM-8sy" secondAttribute="bottom" constant="5" id="CPZ-60-NYQ"/>
                             <constraint firstItem="E4Z-jt-bJi" firstAttribute="leading" secondItem="Myx-nP-eUe" secondAttribute="trailing" constant="2" id="DF4-7k-Pht"/>
                             <constraint firstItem="6Vg-qT-Dgz" firstAttribute="leading" secondItem="KkZ-nU-Qu8" secondAttribute="trailing" constant="2" id="DeP-cv-YfA"/>
+                            <constraint firstItem="Qeh-3D-3Ox" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" id="Dpn-Gw-4VP"/>
                             <constraint firstItem="5ZI-zT-Prr" firstAttribute="leading" secondItem="X3V-Ea-BHY" secondAttribute="trailing" constant="20" id="HBU-FY-ftg"/>
                             <constraint firstItem="Gej-tJ-6Zs" firstAttribute="top" secondItem="OkS-cM-8sy" secondAttribute="bottom" constant="5" id="Hjj-15-Czk"/>
                             <constraint firstItem="Gej-tJ-6Zs" firstAttribute="leading" secondItem="6Vg-qT-Dgz" secondAttribute="trailing" constant="10" id="Ift-Kd-yio"/>
@@ -1055,6 +1063,7 @@
                             <constraint firstItem="Myx-nP-eUe" firstAttribute="top" secondItem="OkS-cM-8sy" secondAttribute="bottom" constant="5" id="OuO-kH-gF5"/>
                             <constraint firstItem="cCU-8r-hQB" firstAttribute="leading" secondItem="Gej-tJ-6Zs" secondAttribute="trailing" constant="2" id="Ov9-n6-DB6"/>
                             <constraint firstItem="5ZI-zT-Prr" firstAttribute="leading" secondItem="jGI-FY-NRp" secondAttribute="leading" constant="15" id="Px2-jH-93g"/>
+                            <constraint firstAttribute="trailing" secondItem="Qeh-3D-3Ox" secondAttribute="trailing" id="SnI-bF-elM"/>
                             <constraint firstItem="KkZ-nU-Qu8" firstAttribute="top" secondItem="OkS-cM-8sy" secondAttribute="bottom" constant="5" id="TWk-NZ-vo5"/>
                             <constraint firstItem="5ZI-zT-Prr" firstAttribute="top" secondItem="X3V-Ea-BHY" secondAttribute="bottom" constant="10" id="WZv-69-HfB"/>
                             <constraint firstAttribute="trailing" secondItem="Gej-tJ-6Zs" secondAttribute="trailing" constant="20" id="WtY-8M-RFE"/>
@@ -1074,6 +1083,7 @@
                             <constraint firstItem="cCU-8r-hQB" firstAttribute="top" secondItem="OkS-cM-8sy" secondAttribute="bottom" constant="5" id="sZw-9K-3Zi"/>
                             <constraint firstItem="OkS-cM-8sy" firstAttribute="top" secondItem="5ZI-zT-Prr" secondAttribute="bottom" constant="8" id="t7b-k4-YWk"/>
                             <constraint firstItem="iZa-ch-as2" firstAttribute="top" secondItem="XpM-ga-Fcm" secondAttribute="bottom" id="y9V-SX-YAr"/>
+                            <constraint firstItem="Qeh-3D-3Ox" firstAttribute="top" secondItem="KkZ-nU-Qu8" secondAttribute="bottom" id="z8o-Ag-Q7z"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1098,6 +1108,7 @@
                     <connections>
                         <outlet property="followersCountLabel" destination="Gej-tJ-6Zs" id="MHg-uE-UX3"/>
                         <outlet property="followingCountLabel" destination="Myx-nP-eUe" id="wee-0L-esS"/>
+                        <outlet property="headerImage" destination="C1B-ae-e6t" id="Rzn-G9-v55"/>
                         <outlet property="profileImageView" destination="X3V-Ea-BHY" id="pov-FU-rit"/>
                         <outlet property="statusCountLabel" destination="KkZ-nU-Qu8" id="NdR-eY-ERU"/>
                         <outlet property="tableView" destination="XpM-ga-Fcm" id="3yK-tB-LWj"/>

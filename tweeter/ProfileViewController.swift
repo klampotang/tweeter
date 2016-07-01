@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerImage: UIImageView!
     
     var tweets : [Tweet] = []
     let dict: NSMutableDictionary = [:]
@@ -46,14 +47,23 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.statusCountLabel.text = "\(statusCount!)"
                 
                 self.dict["screen_name"] = user.screenname
+                
+                let headerImageURL = user.headerImage
+                let data2 = NSData(contentsOfURL: headerImageURL!)
+                if data2 != nil {
+                    let genheaderpic = UIImage(data:data2!)
+                    self.headerImage.image = genheaderpic
+                }
             }
 
         }) { (error: NSError) in
                 print("error in displaying ur pic")
         }
+
         getUserTimeline()
         profileImageView.layer.cornerRadius = 8.0
         profileImageView.clipsToBounds = true
+        
         
     }
 
