@@ -159,17 +159,6 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUD-MM-vqK">
-                                                    <rect key="frame" x="80" y="32" width="287" height="100"/>
-                                                    <accessibility key="accessibilityConfiguration">
-                                                        <accessibilityTraits key="traits" link="YES" staticText="YES"/>
-                                                    </accessibility>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="HaQ-OL-2FL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93Q-YO-AO8">
                                                     <rect key="frame" x="8" y="8" width="65" height="65"/>
                                                     <constraints>
@@ -186,6 +175,17 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hqZ-uD-qDu">
+                                                    <rect key="frame" x="81" y="34" width="273" height="118"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="118" id="Beu-Cw-PdX"/>
+                                                        <constraint firstAttribute="width" constant="273" id="ROp-z5-0SE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QES-ww-Oec" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="top" constant="8" id="1Hg-Ki-GXE"/>
@@ -193,20 +193,19 @@
                                                 <constraint firstAttribute="bottom" secondItem="csr-58-eOY" secondAttribute="bottom" constant="5" id="CPT-Kv-ska"/>
                                                 <constraint firstAttribute="bottom" secondItem="G9J-X4-ruc" secondAttribute="bottom" constant="10" id="Ca1-Pk-Y9A"/>
                                                 <constraint firstItem="1Lb-i7-yO0" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="top" constant="8" id="EL3-4U-b3I"/>
-                                                <constraint firstItem="zUD-MM-vqK" firstAttribute="top" secondItem="QES-ww-Oec" secondAttribute="bottom" constant="5" id="IRX-Xb-FNw"/>
                                                 <constraint firstItem="93Q-YO-AO8" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="8" id="IsK-cK-Uca"/>
                                                 <constraint firstItem="MZr-sS-8Fq" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="top" constant="8" id="J1q-Mn-4d2"/>
                                                 <constraint firstItem="XCL-5V-Xxe" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="120" id="KG5-uW-NaH"/>
                                                 <constraint firstItem="G9J-X4-ruc" firstAttribute="leading" secondItem="csr-58-eOY" secondAttribute="trailing" constant="1" id="KRh-jc-cJq"/>
                                                 <constraint firstItem="csr-58-eOY" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="15" id="Nxg-gj-pad"/>
+                                                <constraint firstItem="hqZ-uD-qDu" firstAttribute="leading" secondItem="93Q-YO-AO8" secondAttribute="trailing" constant="8" id="ONO-7L-s8l"/>
                                                 <constraint firstItem="QES-ww-Oec" firstAttribute="leading" secondItem="1Lb-i7-yO0" secondAttribute="trailing" constant="8" id="Qct-AW-jQS"/>
-                                                <constraint firstAttribute="trailing" secondItem="zUD-MM-vqK" secondAttribute="trailing" constant="8" id="W1Y-YR-5Pi"/>
                                                 <constraint firstItem="BTx-YX-N1m" firstAttribute="leading" secondItem="G9J-X4-ruc" secondAttribute="trailing" constant="7" id="b0K-t2-wMX"/>
                                                 <constraint firstItem="XCL-5V-Xxe" firstAttribute="leading" secondItem="csr-58-eOY" secondAttribute="trailing" constant="60" id="b0i-Yl-1gc"/>
                                                 <constraint firstItem="1Lb-i7-yO0" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="8" id="cMv-Fs-PPa"/>
                                                 <constraint firstAttribute="bottom" secondItem="XCL-5V-Xxe" secondAttribute="bottom" constant="10" id="dqh-sw-Qq6"/>
                                                 <constraint firstItem="93Q-YO-AO8" firstAttribute="top" secondItem="uEF-Jh-gjs" secondAttribute="top" constant="8" id="ezT-OY-Ny9"/>
-                                                <constraint firstItem="zUD-MM-vqK" firstAttribute="leading" secondItem="uEF-Jh-gjs" secondAttribute="leading" constant="80" id="gi9-K3-JeR"/>
+                                                <constraint firstItem="hqZ-uD-qDu" firstAttribute="top" secondItem="QES-ww-Oec" secondAttribute="bottom" constant="5" id="fln-9R-EFA"/>
                                                 <constraint firstAttribute="bottom" secondItem="BTx-YX-N1m" secondAttribute="bottom" constant="10" id="hV8-Sp-0lS"/>
                                             </constraints>
                                             <variation key="default">
@@ -222,7 +221,7 @@
                                             <outlet property="profilePicImage" destination="1Lb-i7-yO0" id="hbt-ao-c9M"/>
                                             <outlet property="retweetCountLabel" destination="XCL-5V-Xxe" id="WNI-kt-vQN"/>
                                             <outlet property="timeLabel" destination="MZr-sS-8Fq" id="aHi-do-vss"/>
-                                            <outlet property="tweetTextLabel" destination="zUD-MM-vqK" id="MFj-LN-Z2P"/>
+                                            <outlet property="tweetTextLabel" destination="hqZ-uD-qDu" id="Bb3-Dx-XUG"/>
                                             <outlet property="usernameLabel" destination="QES-ww-Oec" id="arg-UT-mkb"/>
                                             <segue destination="dpr-34-8zY" kind="show" id="jlN-ta-2cC">
                                                 <segue key="commit" inheritsFrom="parent" id="pc5-Zx-HYQ"/>
