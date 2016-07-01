@@ -12,19 +12,29 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var tweetEnterField: UITextView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var tweetButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tweetEnterField.layer.borderWidth = 1
-        let myColor = UIColor.blackColor()
-        self.tweetEnterField.layer.borderColor = myColor.CGColor
-        
+                
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ComposeViewController.tap(_:)))
         view.addGestureRecognizer(tapGesture)
+
         textView.delegate = self
+        textView.text = "tap to edit"
+        textView.textColor = UIColor.lightGrayColor()
+        tweetButton.layer.borderWidth = 1
+        tweetButton.layer.masksToBounds = false
+        tweetButton.layer.borderColor = UIColor.whiteColor().CGColor
+        tweetButton.layer.cornerRadius = tweetButton.frame.height/2
+        tweetButton.clipsToBounds = true
     }
-    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+    }
     func tap(gesture: UITapGestureRecognizer) {
         tweetEnterField.resignFirstResponder()
     }

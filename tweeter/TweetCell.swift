@@ -16,10 +16,13 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var retweetCountLabel: UILabel!
+    @IBOutlet weak var buttonLike: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profilePicImage.layer.cornerRadius = 8.0
+        profilePicImage.clipsToBounds = true
     }
     var tweety:Tweet?
     
@@ -27,6 +30,7 @@ class TweetCell: UITableViewCell {
         let idString = tweety!.id
         APIClient.sharedInstance.likeStatus(idString!, success: {
             self.likeCountLabel.text = "\((self.tweety?.likeCount)!+1)"
+            self.buttonLike.imageView?.image = UIImage(named: "FillHeart")
             }, failure: { (error: NSError) -> () in
                 print("error:")
                 print(error.localizedDescription)
