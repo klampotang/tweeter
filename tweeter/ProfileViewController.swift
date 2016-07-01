@@ -51,9 +51,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }) { (error: NSError) in
                 print("error in displaying ur pic")
         }
-        // Do any additional setup after loading the view.
-        
         getUserTimeline()
+        profileImageView.layer.cornerRadius = 8.0
+        profileImageView.clipsToBounds = true
+        
     }
 
     override func didReceiveMemoryWarning() {
