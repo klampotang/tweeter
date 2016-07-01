@@ -34,7 +34,18 @@ class MentionsViewController: UIViewController, UITableViewDelegate, UITableView
         
         //tweet
         cell.tweetLabel.text = tweety.text
+        
+        //Profile picture
+        if let profilePicURL = userParticular!.profileImage
+        {
+            let data = NSData(contentsOfURL:profilePicURL)
+            if data != nil {
+                cell.profileImageView.image = UIImage(data:data!)
+            }
+        }
         return cell
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
