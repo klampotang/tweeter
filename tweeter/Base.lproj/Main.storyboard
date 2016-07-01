@@ -236,7 +236,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cqz-gz-cLv">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="v5K-qD-2Ku">
+                        <barButtonItem key="rightBarButtonItem" image="Loggyout" id="v5K-qD-2Ku">
                             <connections>
                                 <action selector="logoutClicked:" destination="V0L-eo-fjf" id="lIW-KE-S7Z"/>
                             </connections>
@@ -880,6 +880,7 @@
     </scenes>
     <resources>
         <image name="HomeSmall" width="16" height="16"/>
+        <image name="Loggyout" width="24" height="24"/>
         <image name="iPhone-Wallpaper-Tumblr-Hipster-Bird" width="736" height="1377"/>
         <image name="iconmonstr-edit-2-16" width="16" height="16"/>
         <image name="iconmonstr-favorite-4-24" width="24" height="24"/>

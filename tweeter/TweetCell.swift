@@ -29,15 +29,30 @@ class TweetCell: UITableViewCell {
     
     @IBAction func likeTapped(sender: AnyObject) {
         let idString = tweety!.id
-        APIClient.sharedInstance.likeStatus(idString!, success: {
-            self.likeCountLabel.text = "\((self.tweety?.likeCount)!+1)"
-            self.buttonLike.imageView?.image = UIImage(named: "FillHeart")
-            }, failure: { (error: NSError) -> () in
-                print("error:")
-                print(error.localizedDescription)
-        })
+        if(tweety?.favorited == false)
+        {
+            APIClient.sharedInstance.likeStatus(idString!, success: {
+                self.likeCountLabel.text = "\((self.tweety?.likeCount)!+1)"
+                self.buttonLike.imageView?.image = UIImage(named: "FillHeart")
+                }, failure: { (error: NSError) -> () in
+                    print("error:")
+                    print(error.localizedDescription)
+            })
+        }
+        else if(tweety?.favorited == true)
+        {
+            APIClient.sharedInstance.unlikeStatus(idString!, success: {
+                self.likeCountLabel.text = "\((self.tweety?.likeCount)!-1)"
+                self.buttonLike.imageView?.image = UIImage(named: "Heart")
+                }, failure: { (error: NSError) -> () in
+                    print("error:")
+                    print(error.localizedDescription)
+            })
+        }
+
     }
-    @IBAction func retweetTouched(sender: AnyObject) {
+    @IBAction func retweetTouched(sender: AnyObject)
+    {
         
         let idInt = self.tweety!.id
         APIClient.sharedInstance.retweet(idInt!, success: { 

@@ -72,6 +72,15 @@ class APIClient: BDBOAuth1SessionManager {
             print("failure: \(error)")
         }
     }
+    func unlikeStatus(id: String, success: () -> (), failure: (NSError)-> ())
+    {
+        POST("1.1/favorites/destroy.json?id=\(id)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            print("Unliked the picture")
+            success()
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+                print(error)
+        }
+    }
     func currUser(success: (User) -> (), failure: (NSError)-> ())
     {
         GET("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
