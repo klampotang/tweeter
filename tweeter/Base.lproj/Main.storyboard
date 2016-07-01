@@ -371,7 +371,7 @@
         <scene sceneID="Hgs-dT-NjF">
             <objects>
                 <navigationController storyboardIdentifier="TweetsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wRT-pT-Qox" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="bLd-Pk-Fzp"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeSmall" id="bLd-Pk-Fzp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hcl-4e-qKY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -576,7 +576,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mentions" id="7we-nh-Gsn"/>
+                    <tabBarItem key="tabBarItem" title="Mentions" image="iconmonstr-star-7-16" id="7we-nh-Gsn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="fkX-vW-01G" id="Deh-hw-Fih"/>
@@ -644,7 +644,7 @@
                             <outletCollection property="gestureRecognizers" destination="fso-QR-g9G" appends="YES" id="ZKr-bm-oPp"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Compose" id="Bb9-Qq-jTm"/>
+                    <tabBarItem key="tabBarItem" title="Compose" image="iconmonstr-edit-2-16" id="Bb9-Qq-jTm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="countdownLabel" destination="ecg-Sj-Hus" id="SeJ-Od-TlP"/>
@@ -665,6 +665,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JTp-uZ-0Th">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.46592636679999999" green="0.74204557230000001" blue="0.8771033654" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="wRT-pT-Qox" kind="relationship" relationship="viewControllers" id="Zkm-p2-AYi"/>
@@ -795,7 +796,7 @@
                             <constraint firstItem="OkS-cM-8sy" firstAttribute="top" secondItem="5ZI-zT-Prr" secondAttribute="bottom" constant="23" id="obz-yJ-2OC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="yyV-dL-UgW"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="iconmonstr-user-7-16" id="yyV-dL-UgW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="followersCountLabel" destination="Gej-tJ-6Zs" id="MHg-uE-UX3"/>
@@ -812,6 +813,12 @@
             <point key="canvasLocation" x="300.5" y="999.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HomeSmall" width="16" height="16"/>
+        <image name="iconmonstr-edit-2-16" width="16" height="16"/>
+        <image name="iconmonstr-star-7-16" width="16" height="16"/>
+        <image name="iconmonstr-user-7-16" width="16" height="16"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jlN-ta-2cC"/>
     </inferredMetricsTieBreakers>
