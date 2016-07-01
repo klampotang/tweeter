@@ -217,6 +217,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonLike" destination="csr-58-eOY" id="r26-bd-MHP"/>
+                                            <outlet property="buttonRetweet" destination="BTx-YX-N1m" id="Vg7-GE-lVk"/>
                                             <outlet property="likeCountLabel" destination="G9J-X4-ruc" id="PzJ-zf-vhP"/>
                                             <outlet property="profilePicImage" destination="1Lb-i7-yO0" id="hbt-ao-c9M"/>
                                             <outlet property="retweetCountLabel" destination="XCL-5V-Xxe" id="WNI-kt-vQN"/>

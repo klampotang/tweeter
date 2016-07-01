@@ -71,7 +71,20 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //Likes
         cell.likeCountLabel.text = "\(tweety.likeCount)"
+        
+        //If statement for retweet/like
+        
+        if(cell.tweety?.favorited == true)
+        {
+            cell.buttonLike.imageView?.image = UIImage(named: "FillHeart")
+        }
+        if(cell.tweety?.retweeted == true)
+        {
+            cell.buttonRetweet.imageView?.image = UIImage(named: "FillRetweet")
+        }
         return cell
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

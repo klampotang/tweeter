@@ -18,6 +18,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var buttonLike: UIButton!
     
+    @IBOutlet weak var buttonRetweet: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,6 +42,7 @@ class TweetCell: UITableViewCell {
         let idInt = self.tweety!.id
         APIClient.sharedInstance.retweet(idInt!, success: { 
             self.retweetCountLabel.text = "\((self.tweety?.retweetCount)!+1)"
+            self.buttonRetweet.imageView?.image = UIImage(named: "FillRetweet")
         }, failure: { (error: NSError) -> () in
             print("error:")
             print(error.localizedDescription)
