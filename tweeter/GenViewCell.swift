@@ -12,8 +12,13 @@ class GenViewCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImage.layer.cornerRadius = 8.0
+        profileImage.clipsToBounds = true
+        
         // Initialization code
     }
 

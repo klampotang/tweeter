@@ -17,6 +17,7 @@ class GenProfileViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     
+    @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     var genAuthor : User?
@@ -41,17 +42,26 @@ class GenProfileViewController: UIViewController, UITableViewDelegate, UITableVi
             let genpic = UIImage(data:data!)
             self.genProfilePic.image = genpic
         }
+        genProfilePic.layer.cornerRadius = 8.0
+        genProfilePic.clipsToBounds = true
         //Get status count
         let statusCount = genAuthor?.statusCount
-        statusCountLabel.text = "\(statusCount!) statuses"
+        statusCountLabel.text = "\(statusCount!)"
         //Get followers Count
         let followerCount = genAuthor?.followersCount
-        followersCountLabel.text = "\(followerCount!) followers"
+        followersCountLabel.text = "\(followerCount!)"
         //Get following count
         let followingCount = genAuthor?.followingCount
-        followingCountLabel.text = "\(followingCount!) following"
+        followingCountLabel.text = "\(followingCount!)"
         
         dict["screen_name"] = genAuthor?.screenname
+        
+        let headerImageURL = genAuthor?.headerImage
+        let data2 = NSData(contentsOfURL: headerImageURL!)
+        if data2 != nil {
+            let genheaderpic = UIImage(data:data2!)
+            self.headerImage.image = genheaderpic
+        }
         getUserTimeline()
     }
 
@@ -73,7 +83,19 @@ class GenProfileViewController: UIViewController, UITableViewDelegate, UITableVi
         
         //tweet
         cell.tweetLabel.text = tweety.text
+        
+        //pic
+        if let profilePicURL = userParticular!.profileImage
+        {
+            let data = NSData(contentsOfURL:profilePicURL)
+            if data != nil {
+                cell.profileImage.image = UIImage(data:data!)
+            }
+        }
+        
         return cell
+        
+
     }
     func getUserTimeline()
     {

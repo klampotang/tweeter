@@ -20,6 +20,7 @@ class User: NSObject {
     var statusCount : Int?
     var followingCount : Int?
     var followersCount : Int?
+    var headerImage : NSURL?
     
     init(dictionary: NSDictionary)
     {
@@ -39,7 +40,12 @@ class User: NSObject {
         followingCount = dictionary["friends_count"] as? Int
         statusCount = dictionary["statuses_count"] as? Int
         followersCount = dictionary["followers_count"] as? Int
-        
+        let headerPicURL = dictionary["profile_banner_url"] as? String
+        if(headerPicURL != nil)
+        {
+            let modifiedHeaderURLString = headerPicURL!.stringByReplacingOccurrencesOfString("_normal", withString: "")
+            headerImage = NSURL(string: modifiedHeaderURLString)
+        }
     }
     static var _currentUser: User?
     
