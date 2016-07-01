@@ -28,6 +28,17 @@ class APIClient: BDBOAuth1SessionManager {
                 failure(error)
         })
     }
+    func homeTimeLineMore(maxID: String, success: ([Tweet]) -> (), failure: (NSError) -> ())
+    {
+        GET("1.1/statuses/home_timeline.json?max_id=\(maxID)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries)
+            
+            success(tweets)
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure(error)
+        })
+    }
     
     func getUserTimeline(params: NSMutableDictionary, success: ([Tweet]) -> (), failure: (NSError) -> ())
     {
@@ -93,6 +104,7 @@ class APIClient: BDBOAuth1SessionManager {
         })
         
     }
+
     func postStatus(status: String)
     {
         let escapedString = status.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())

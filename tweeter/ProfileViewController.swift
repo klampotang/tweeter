@@ -37,13 +37,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.usernameLabel.text = user.screenname
                 self.taglineLabel.text = user.tagline
                 let followersCount = user.followersCount
-                self.followersCountLabel.text = "\(followersCount!) followers"
+                self.followersCountLabel.text = "\(followersCount!)"
                 
                 let followingCount = user.followingCount
-                self.followingCountLabel.text = "\(followingCount!) following"
+                self.followingCountLabel.text = "\(followingCount!)"
                 
                 let statusCount = user.statusCount
-                self.statusCountLabel.text = "\(statusCount!) statuses"
+                self.statusCountLabel.text = "\(statusCount!)"
                 
                 self.dict["screen_name"] = user.screenname
             }
@@ -72,7 +72,18 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         //tweet
         cell.tweetLabel.text = tweety.text
+        
+        //pic
+        if let profilePicURL = userParticular!.profileImage
+        {
+            let data = NSData(contentsOfURL:profilePicURL)
+            if data != nil {
+                cell.profileImageView.image = UIImage(data:data!)
+            }
+        }
+
         return cell
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

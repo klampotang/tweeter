@@ -8,13 +8,52 @@
 
 import UIKit
 import NSDate_TimeAgo
-
-class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InfiniteScrollActivityView: UIView {
+    var activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView()
+    static let defaultHeight:CGFloat = 60.0
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupActivityIndicator()
+    }
+    
+    override init(frame aRect: CGRect) {
+        super.init(frame: aRect)
+        setupActivityIndicator()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        activityIndicatorView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+    }
+    
+    func setupActivityIndicator() {
+        activityIndicatorView.activityIndicatorViewStyle = .Gray
+        activityIndicatorView.hidesWhenStopped = true
+        self.addSubview(activityIndicatorView)
+    }
+    
+    func stopAnimating() {
+        self.activityIndicatorView.stopAnimating()
+        self.hidden = true
+    }
+    
+    func startAnimating() {
+        self.hidden = false
+        self.activityIndicatorView.startAnimating()
+    }
+}
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 
     var tweets : [Tweet] = []
+    var maxID : String?
+    
+    //Infinite scroll stuff
     var isMoreDataLoading = false
+    var loadingMoreView:InfiniteScrollActivityView?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -28,6 +67,16 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
+        
+        //// Set up Infinite Scroll loading indicator
+        let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.hidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset;
+        insets.bottom += InfiniteScrollActivityView.defaultHeight;
+        tableView.contentInset = insets
 
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,6 +157,28 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 //print("error: \(error.localizedDesciption)")
         })
     }
+    func getMoreTimeline()
+    {
+        self.updateMaxID()
+        APIClient.sharedInstance.homeTimeLineMore(maxID!, success: { (tweets: [Tweet]) -> Void in
+            
+            // Stop the loading indicator
+            self.loadingMoreView!.stopAnimating()
+            
+            self.tweets.appendContentsOf(tweets)
+            
+            self.tableView.reloadData()
+            self.isMoreDataLoading = false
+            // Tell the refreshControl to stop spinning
+            }, failure: { (error: NSError) -> () in
+                //print("error: \(error.localizedDesciption)")
+        })
+    }
+    func updateMaxID()
+    {
+        maxID = tweets.last!.id
+
+    }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         // Handle scroll behavior here
         if (!isMoreDataLoading) {
@@ -119,7 +190,13 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
                 isMoreDataLoading = true
                 
-                getTimeline()
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+
+                
+                getMoreTimeline()
             }
         }
     }

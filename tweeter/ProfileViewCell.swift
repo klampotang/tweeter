@@ -12,9 +12,12 @@ class ProfileViewCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImageView.layer.cornerRadius = 8.0
+        profileImageView.clipsToBounds = true
         // Initialization code
     }
 

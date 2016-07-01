@@ -42,6 +42,8 @@ class Tweet: NSObject {
         
         //Retweeted
         retweeted = dictionary["retweeted"] as! Bool
+        
+        
     }
     
     class func tweetsWithArray(dictionaries: [NSDictionary]) -> [Tweet]
