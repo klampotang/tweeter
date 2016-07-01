@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var profilePicImage: UIImageView!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var likeCountFromSegue : Int?
     var textFromSegue : String?
@@ -30,6 +31,11 @@ class DetailViewController: UIViewController {
         tweetTextLabel.text = textFromSegue
         profilePicImage.image = profilePicFromSegue
         usernameLabel.text = usernameFromSegue
+        profilePicImage.layer.cornerRadius = 8.0
+        profilePicImage.clipsToBounds = true
+        let dateformat = NSDateFormatter()
+        dateformat.dateStyle = NSDateFormatterStyle.LongStyle
+        dateLabel.text = dateformat.stringFromDate((particularTweet?.createdAt)!)
         
     }
 
