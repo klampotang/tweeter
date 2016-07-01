@@ -28,10 +28,11 @@ class User: NSObject {
         screenname = dictionary["screen_name"] as? String
         
         let profilePicURL = dictionary["profile_image_url_https"] as? String
-        if let profilePicURL = profilePicURL
-        {
-            profileImage = NSURL(string: profilePicURL)
-        }
+        let modifiedProfileUrlString = profilePicURL!.stringByReplacingOccurrencesOfString("_normal", withString: "")
+        //if let modifiedProfileUrlString = modifiedProfileUrlString
+        //{
+            profileImage = NSURL(string: modifiedProfileUrlString)
+        //}
         
         tagline = dictionary["description"] as? String
         
