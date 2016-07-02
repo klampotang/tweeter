@@ -2,7 +2,7 @@
 
 tweeter is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 15 hours spent in total
+Time spent: 20 hours spent in total
 
 ## User Stories
 
@@ -40,6 +40,7 @@ The following **additional** features are implemented:
 
 - [x] User can see their own tweets on their profile tab
 - [x] 3D touch for detail view of tweets (with preview actions: like, retweet)
+- [x] Follower list is displayed when you click on FOLLOWERS
 
 
 
