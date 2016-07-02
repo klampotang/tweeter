@@ -40,6 +40,19 @@ class APIClient: BDBOAuth1SessionManager {
         })
     }
     
+    func getFollowers(screenname: String, success: ([NSDictionary]) -> (), failure: (NSError) -> ())
+    {
+        GET("1.1/followers/list.json?screen_name=\(screenname)", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            let dictionaries = response as! NSDictionary
+            let users = dictionaries["users"] as! [NSDictionary]
+            //let followers = User.UsersWithArray(users)
+            success(users)
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure(error)
+        })
+        
+    }
+    
     func getUserTimeline(params: NSMutableDictionary, success: ([Tweet]) -> (), failure: (NSError) -> ())
     {
         print(params)

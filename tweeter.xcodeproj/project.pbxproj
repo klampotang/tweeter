@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881F34521D273847000C8049 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34511D273847000C8049 /* FollowersViewController.swift */; };
+		881F34541D27385D000C8049 /* FollowerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F34531D27385D000C8049 /* FollowerViewCell.swift */; };
 		88B6CF011D25B7AA00E8BBEF /* GenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6CF001D25B7AA00E8BBEF /* GenViewCell.swift */; };
 		88B6CF031D25BB7400E8BBEF /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6CF021D25BB7400E8BBEF /* ProfileViewCell.swift */; };
 		88B6CF061D260E7C00E8BBEF /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6CF051D260E7C00E8BBEF /* MentionsViewController.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		5FE66E2AA747762E8AC07393 /* Pods-tweeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeter.release.xcconfig"; path = "Pods/Target Support Files/Pods-tweeter/Pods-tweeter.release.xcconfig"; sourceTree = "<group>"; };
 		6659FD2275C155993456C691 /* Pods_tweeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		881F34511D273847000C8049 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+		881F34531D27385D000C8049 /* FollowerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerViewCell.swift; sourceTree = "<group>"; };
 		88B6CF001D25B7AA00E8BBEF /* GenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenViewCell.swift; sourceTree = "<group>"; };
 		88B6CF021D25BB7400E8BBEF /* ProfileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		88B6CF051D260E7C00E8BBEF /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				88B6CF021D25BB7400E8BBEF /* ProfileViewCell.swift */,
 				88EE56021D220F9F00E1BC51 /* TweetCell.swift */,
 				88B6CF071D260EE700E8BBEF /* MentionsViewCell.swift */,
+				881F34531D27385D000C8049 /* FollowerViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				88EE560A1D24752900E1BC51 /* ProfileViewController.swift */,
 				88EE560C1D2486F900E1BC51 /* GenProfileViewController.swift */,
 				88B6CF051D260E7C00E8BBEF /* MentionsViewController.swift */,
+				881F34511D273847000C8049 /* FollowersViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -287,12 +293,14 @@
 			files = (
 				88EE56071D238E0900E1BC51 /* ComposeViewController.swift in Sources */,
 				88EE56091D2447FC00E1BC51 /* ReplyViewController.swift in Sources */,
+				881F34541D27385D000C8049 /* FollowerViewCell.swift in Sources */,
 				88EE55FB1D21E2B000E1BC51 /* User.swift in Sources */,
 				88B6CF011D25B7AA00E8BBEF /* GenViewCell.swift in Sources */,
 				88EE56031D220F9F00E1BC51 /* TweetCell.swift in Sources */,
 				88EE55FD1D21E2C300E1BC51 /* Tweet.swift in Sources */,
 				88EE55F61D21CD5A00E1BC51 /* LoginViewController.swift in Sources */,
 				88EE560B1D24752900E1BC51 /* ProfileViewController.swift in Sources */,
+				881F34521D273847000C8049 /* FollowersViewController.swift in Sources */,
 				88B6CF061D260E7C00E8BBEF /* MentionsViewController.swift in Sources */,
 				88B6CF081D260EE700E8BBEF /* MentionsViewCell.swift in Sources */,
 				88EE56011D21FBD700E1BC51 /* TweetsViewController.swift in Sources */,

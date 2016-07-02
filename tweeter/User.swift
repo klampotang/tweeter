@@ -47,6 +47,19 @@ class User: NSObject {
             headerImage = NSURL(string: modifiedHeaderURLString)
         }
     }
+    
+    class func UsersWithArray(dictionaries: [NSDictionary]) -> [User]
+    {
+        var followers = [User]()
+        
+        for dictionary in dictionaries{
+            let user = User(dictionary: dictionary)
+            followers.append(user)
+        }
+        
+        return followers
+    }
+
     static var _currentUser: User?
     
     class var currentUser:User?

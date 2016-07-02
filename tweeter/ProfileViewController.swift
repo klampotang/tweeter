@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var tweets : [Tweet] = []
     let dict: NSMutableDictionary = [:]
+    var user1: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                     let genheaderpic = UIImage(data:data2!)
                     self.headerImage.image = genheaderpic
                 }
+                self.user1 = user
             }
 
         }) { (error: NSError) in
@@ -109,6 +111,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         }) { (error: NSError) in
             
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! FollowersViewController
+        vc.userParticular = user1
     }
 
 }
