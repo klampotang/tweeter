@@ -56,6 +56,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/klampotang/tweeter/blob/master/tweeter1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='https://github.com/klampotang/tweeter/blob/master/tweeter2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src='https://github.com/klampotang/tweeter/blob/master/tweeter3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/klampotang/tweeter/blob/master/tweeter4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
